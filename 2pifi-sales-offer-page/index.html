@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>2pifi - Enterprise Starlink Deployment Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            overflow-x: hidden;
+            background: #0d1b2a;
+        }
+
+        /* ===== TOP NAVIGATION BAR ===== */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: transparent;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-phone-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-phone-number {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #6BA649;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(107, 166, 73, 0.4);
+            border-radius: 50px;
+            background: rgba(107, 166, 73, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phone-icon-inline {
+            width: 1.1rem;
+            height: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .nav-phone-number:hover {
+            text-shadow: 0 0 15px rgba(107, 166, 73, 0.6);
+            background: rgba(107, 166, 73, 0.2);
+            border-color: #6BA649;
+            box-shadow: 0 0 20px rgba(107, 166, 73, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .nav-phone-icon {
+            color: #6BA649;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                padding: 0 1.5rem;
+            }
+
+            .nav-logo img {
+                height: 32px;
+            }
+
+            .nav-phone-label {
+                display: none;
+            }
+
+            .nav-phone-number {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ===== STICKY CALL BUTTON ===== */
+        .sticky-call-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #6BA649;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.4);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            animation: pulse-glow 3.5s ease-in-out infinite;
+        }
+
+        .sticky-call-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(107, 166, 73, 0.6);
+        }
+
+        .sticky-call-button .phone-icon {
+            font-size: 1.8rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sticky-call-tooltip {
+            position: absolute;
+            right: 75px;
+            background: rgba(13, 27, 42, 0.95);
+            color: #6BA649;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border: 1px solid rgba(107, 166, 73, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .sticky-call-tooltip::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid rgba(13, 27, 42, 0.95);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .sticky-call-button:hover .sticky-call-tooltip {
+            opacity: 1;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(107, 166, 73, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(107, 166, 73, 0.7);
+            }
+        }
+
+        /* pulse animation applied via animation property below */
+
+        @media (max-width: 768px) {
+            .sticky-call-button {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .sticky-call-button .phone-icon {
+                font-size: 1.4rem;
+            }
+
+            .sticky-call-tooltip {
+                right: 65px;
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* ===== HERO SECTION - EXACT COPY ===== */
+        .hero {
+            background: radial-gradient(ellipse at 50% 50%, #1e4264 0%, #0d1b2a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 20%; left: 80%; animation-delay: 0.5s; }
+        .star:nth-child(3) { top: 30%; left: 50%; animation-delay: 1s; }
+        .star:nth-child(4) { top: 40%; left: 10%; animation-delay: 1.5s; }
+        .star:nth-child(5) { top: 50%; left: 90%; animation-delay: 2s; }
+        .star:nth-child(6) { top: 60%; left: 30%; animation-delay: 2.5s; }
+        .star:nth-child(7) { top: 70%; left: 70%; animation-delay: 0.3s; }
+        .star:nth-child(8) { top: 80%; left: 40%; animation-delay: 0.8s; }
+        .star:nth-child(9) { top: 15%; left: 60%; animation-delay: 1.2s; }
+        .star:nth-child(10) { top: 85%; left: 15%; animation-delay: 1.7s; }
+
+        .planet-earth {
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(100, 180, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(20, 80, 140, 0.3) 0%, transparent 60%);
+            border: 3px solid rgba(80, 160, 255, 0.6);
+            box-shadow:
+                inset -80px -80px 200px rgba(20, 60, 100, 0.8),
+                inset 60px 60px 150px rgba(100, 180, 255, 0.3),
+                0 0 200px rgba(80, 160, 255, 0.4),
+                0 0 400px rgba(40, 120, 200, 0.2);
+            animation: rotate-planet 60s linear infinite;
+        }
+
+        @keyframes rotate-planet {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .planet-earth::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            right: -10%;
+            bottom: -10%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(80, 200, 255, 0.15) 0%, transparent 70%);
+            animation: pulse-glow-planet 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow-planet {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .orbital-ring {
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 1100px;
+            height: 1100px;
+            border: 2px solid rgba(107, 166, 73, 0.3);
+            border-radius: 50%;
+            animation: orbit-rotate 40s linear infinite;
+        }
+
+        .orbital-ring::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            background: #6BA649;
+            border-radius: 50%;
+            box-shadow: 0 0 30px #6BA649, 0 0 60px #6BA649;
+        }
+
+        @keyframes orbit-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .network-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .connection-beam {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(107, 166, 73, 0.8) 20%,
+                rgba(107, 166, 73, 0.8) 80%,
+                transparent 100%);
+            box-shadow: 0 0 20px rgba(107, 166, 73, 0.6);
+            transform-origin: left center;
+            animation: beam-flow 3s ease-in-out infinite;
+        }
+
+        @keyframes beam-flow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .beam-1 {
+            top: 25%;
+            left: 10%;
+            width: 300px;
+            transform: rotate(25deg);
+            animation-delay: 0s;
+        }
+
+        .beam-2 {
+            top: 45%;
+            left: 5%;
+            width: 250px;
+            transform: rotate(-15deg);
+            animation-delay: 1s;
+        }
+
+        .beam-3 {
+            top: 65%;
+            left: 15%;
+            width: 280px;
+            transform: rotate(10deg);
+            animation-delay: 2s;
+        }
+
+        .data-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(107, 166, 73, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(107, 166, 73, 0.6);
+            animation: float-particle 8s ease-in-out infinite;
+        }
+
+        @keyframes float-particle {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            50% {
+                transform: translate(100px, -50px);
+            }
+        }
+
+        .particle-1 { top: 30%; left: 20%; animation-delay: 0s; }
+        .particle-2 { top: 50%; left: 15%; animation-delay: 2s; }
+        .particle-3 { top: 70%; left: 25%; animation-delay: 4s; }
+        .particle-4 { top: 40%; left: 10%; animation-delay: 6s; }
+
+        .scan-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(107, 166, 73, 0.03) 2px,
+                rgba(107, 166, 73, 0.03) 4px
+            );
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            margin-left: 4rem;
+        }
+
+        .eyebrow {
+            color: #6BA649;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.5);
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 2rem;
+            color: #fff;
+            letter-spacing: -1px;
+            max-width: 950px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 .highlight {
+            color: #6BA649;
+            text-shadow: 0 0 30px rgba(107, 166, 73, 0.6);
+        }
+
+        .subheadline {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            max-width: 850px;
+            line-height: 1.7;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .guarantee-badge {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.2) 0%, rgba(107, 166, 73, 0.1) 100%);
+            border: 2px solid #6BA649;
+            color: #6BA649;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 3rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 40px rgba(107, 166, 73, 0.3), inset 0 0 20px rgba(107, 166, 73, 0.1);
+            text-shadow: 0 0 15px rgba(107, 166, 73, 0.5);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6BA649 0%, #5a8f3c 100%);
+            color: #fff;
+            padding: 1.5rem 3.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 40px rgba(107, 166, 73, 0.4), inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(107, 166, 73, 0.5), inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            padding: 1.5rem 3.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 950px;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(107, 166, 73, 0.2);
+            box-shadow: 0 -1px 20px rgba(107, 166, 73, 0.1);
+        }
+
+        .stat-item {
+            text-align: left;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #6BA649 0%, transparent 100%);
+            border-radius: 2px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #6BA649;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(107, 166, 73, 0.5);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* ===== GUARANTEE SECTION ===== */
+        .section-guarantee {
+            background: #0d1b2a;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-guarantee::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .guarantee-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .guarantee-heading {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+        }
+
+        .guarantee-main {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .guarantee-points {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee-point {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #6BA649;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guarantee-footer {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .guarantee-cta {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* ===== NUMBERS SECTION ===== */
+        .section-numbers {
+            background: #0f2136;
+            padding: 6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-numbers::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .numbers-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .numbers-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .numbers-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .number-card {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.1) 0%, rgba(107, 166, 73, 0.05) 100%);
+            border-left: 4px solid #6BA649;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .number-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(107, 166, 73, 0.2);
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.15) 0%, rgba(107, 166, 73, 0.08) 100%);
+        }
+
+        .number-large {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #6BA649;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(107, 166, 73, 0.5);
+        }
+
+        .number-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .section-process {
+            background: #0d1b2a;
+            padding: 6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .process-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .process-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.1) 0%, rgba(107, 166, 73, 0.05) 100%);
+            border-left: 5px solid #6BA649;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(107, 166, 73, 0.2);
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.15) 0%, rgba(107, 166, 73, 0.08) 100%);
+        }
+
+        .step-number {
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px rgba(107, 166, 73, 0.4);
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .step-description {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .process-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        /* ===== PARTNERS SECTION ===== */
+        .section-partners {
+            background: #0f2136;
+            padding: 5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-partners::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .partners-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 3rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .partner-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-right: 1px solid rgba(107, 166, 73, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .partner-item:last-child {
+            border-right: none;
+        }
+
+        .partner-item:hover {
+            color: #6BA649;
+            text-shadow: 0 0 15px rgba(107, 166, 73, 0.4);
+        }
+
+        /* ===== CASE STUDIES SECTION ===== */
+        .section-cases {
+            background: #0d1b2a;
+            padding: 6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-cases::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .cases-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cases-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.1) 0%, rgba(107, 166, 73, 0.05) 100%);
+            border-top: 3px solid #6BA649;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(107, 166, 73, 0.2);
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.15) 0%, rgba(107, 166, 73, 0.08) 100%);
+        }
+
+        .case-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #6BA649;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+        }
+
+        .case-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-section-label {
+            font-size: 0.85rem;
+            color: #6BA649;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-section-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .case-results {
+            margin-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .case-result-item {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-result-item strong {
+            color: #6BA649;
+            font-weight: 700;
+        }
+
+        .case-footer {
+            font-size: 0.95rem;
+            color: #6BA649;
+            font-weight: 700;
+            font-style: italic;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        /* ===== OBJECTIONS SECTION ===== */
+        .section-objections {
+            background: #0f2136;
+            padding: 6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-objections::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .objections-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .objections-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .objections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .objection-card {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.1) 0%, rgba(107, 166, 73, 0.05) 100%);
+            border-left: 5px solid #6BA649;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .objection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(107, 166, 73, 0.2);
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.15) 0%, rgba(107, 166, 73, 0.08) 100%);
+        }
+
+        .objection-question {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #6BA649;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .objection-answer {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .section-faq {
+            background: #0d1b2a;
+            padding: 6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.1) 0%, rgba(107, 166, 73, 0.05) 100%);
+            border-left: 4px solid #6BA649;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background: linear-gradient(135deg, rgba(107, 166, 73, 0.15) 0%, rgba(107, 166, 73, 0.08) 100%);
+            box-shadow: 0 8px 30px rgba(107, 166, 73, 0.2);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            padding-left: 2.5rem;
+        }
+
+        .faq-question-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #6BA649;
+            transition: transform 0.3s ease;
+            font-weight: 700;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 2rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .faq-answer-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .section-final-cta {
+            background: #0f2136;
+            padding: 6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .section-final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6BA649, transparent);
+        }
+
+        .final-cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-cta-heading {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6BA649;
+            text-shadow: 0 0 20px rgba(107, 166, 73, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        .final-cta-text {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calendly-embed {
+            margin: 3rem 0;
+        }
+
+        .calendly-embed iframe {
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(107, 166, 73, 0.2);
+        }
+
+        .final-fallback {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .final-fallback-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0d1b2a;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== SCROLLING ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* ===== PASSWORD GATE ===== */
+        .password-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0d1b2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .password-gate.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .password-gate-container {
+            background: linear-gradient(135deg, rgba(31, 67, 100, 0.8) 0%, rgba(13, 27, 42, 0.95) 100%);
+            border: 2px solid rgba(107, 166, 73, 0.4);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(107, 166, 73, 0.2);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+        }
+
+        .password-gate-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .password-gate-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .password-gate-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .password-gate-input {
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(107, 166, 73, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .password-gate-input:focus {
+            outline: none;
+            border-color: #6BA649;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(107, 166, 73, 0.3);
+        }
+
+        .password-gate-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .password-gate-button {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6BA649 0%, #5a8f3c 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(107, 166, 73, 0.4);
+            text-transform: uppercase;
+        }
+
+        .password-gate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(107, 166, 73, 0.5);
+        }
+
+        .password-gate-button:active {
+            transform: translateY(0);
+        }
+
+        .password-gate-error {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            height: 1.2rem;
+        }
+
+        .password-gate-error.show {
+            opacity: 1;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .planet-earth {
+                width: 700px;
+                height: 700px;
+                top: -10%;
+                right: -20%;
+            }
+
+            .orbital-ring {
+                width: 850px;
+                height: 850px;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .hero-container {
+                margin-left: 2rem;
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .objections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+                padding-top: 100px;
+            }
+
+            .hero-container {
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subheadline {
+                font-size: 1.15rem;
+            }
+
+            .planet-earth {
+                width: 500px;
+                height: 500px;
+                top: 0;
+                right: -30%;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stat-item {
+                text-align: center;
+                padding-left: 0;
+            }
+
+            .stat-item::before {
+                display: none;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                text-align: center;
+                width: 100%;
+            }
+
+            .beam-1, .beam-2, .beam-3 {
+                display: none;
+            }
+
+            .guarantee-heading,
+            .process-title,
+            .cases-title,
+            .objections-title,
+            .faq-title {
+                font-size: 1.8rem;
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .partner-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+                padding: 1.5rem 1rem;
+            }
+
+            .partner-item:last-child {
+                border-bottom: none;
+            }
+
+            .section-guarantee,
+            .section-numbers,
+            .section-process,
+            .section-cases,
+            .section-objections,
+            .section-faq,
+            .section-final-cta {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PASSWORD GATE ===== -->
+    <div class="password-gate" id="passwordGate">
+        <div class="password-gate-container">
+            <div class="password-gate-title">Protected Page</div>
+            <div class="password-gate-subtitle">This page requires a passcode to access. Please enter your passcode below.</div>
+            <div class="password-gate-form">
+                <input
+                    type="password"
+                    class="password-gate-input"
+                    id="passwordInput"
+                    placeholder="Enter passcode"
+                    autocomplete="off"
+                >
+                <button class="password-gate-button" id="passwordButton">Access</button>
+                <div class="password-gate-error" id="passwordError"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOP NAVIGATION BAR ===== -->
+    <nav class="top-nav">
+        <div class="nav-logo">
+            <img src="https://2pifi.com/wp-content/uploads/2025/11/cropped-2pifi-logo-horizontal-transparent.png" alt="2pifi" />
+        </div>
+        <div class="nav-phone">
+            <a href="tel:+15552743400" class="nav-phone-number"><svg class="phone-icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (555) 2PI-FI00</a>
+        </div>
+    </nav>
+
+    <!-- ===== STICKY CALL BUTTON ===== -->
+    <a href="tel:+15552743400" class="sticky-call-button">
+        <div class="phone-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="sticky-call-tooltip">Call Now</div>
+    </a>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+
+        <div class="planet-earth"></div>
+        <div class="orbital-ring"></div>
+
+        <div class="network-lines">
+            <div class="connection-beam beam-1"></div>
+            <div class="connection-beam beam-2"></div>
+            <div class="connection-beam beam-3"></div>
+        </div>
+
+        <div class="data-particle particle-1"></div>
+        <div class="data-particle particle-2"></div>
+        <div class="data-particle particle-3"></div>
+        <div class="data-particle particle-4"></div>
+
+        <div class="scan-overlay"></div>
+
+        <div class="hero-container">
+            <div class="eyebrow">Enterprise Starlink Deployment</div>
+
+            <h1>
+                Deploy Starlink Across Your Enterprise: <span class="highlight">You Don't Pay Until Your Site Is Verified Operational</span>
+            </h1>
+
+            <div class="subheadline">
+                Fully-managed rollout eliminates deployment risk, coordination failures, and logistics chaos. We handle procurement, installation, validation, and verification end-to-end.
+            </div>
+
+            <div class="guarantee-badge">
+                ✓ Zero Payment Until Verified Operational
+            </div>
+
+            <div class="cta-group">
+                <a href="#assessment" class="btn-primary">Get a Site Assessment</a>
+                <a href="#process" class="btn-secondary">See Our Process</a>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Sites Deployed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.8%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">48hrs</div>
+                    <div class="stat-label">Avg. Install Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Upfront Risk</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GUARANTEE SECTION ===== -->
+    <section class="section-guarantee fade-in-section">
+        <div class="guarantee-content">
+            <div class="guarantee-heading">WE GUARANTEE</div>
+            <div class="guarantee-main">
+                If your site is not verified operational, you don't pay. Period.
+            </div>
+
+            <div class="guarantee-points">
+                <div class="guarantee-point">No Partial Billing.</div>
+                <div class="guarantee-point">No Handoffs.</div>
+                <div class="guarantee-point">No Guesswork.</div>
+            </div>
+
+            <div class="guarantee-footer">
+                Your site is not considered complete until verified operational and performing to enterprise specification. That's not a tagline — it's in the contract.
+            </div>
+
+            <div class="guarantee-cta">
+                <a href="#assessment" class="btn-primary">Schedule Your Site Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NUMBERS SECTION ===== -->
+    <section class="section-numbers fade-in-section">
+        <div class="numbers-header">
+            <div class="numbers-title">THE NUMBERS SPEAK FOR THEMSELVES</div>
+        </div>
+
+        <div class="numbers-grid">
+            <div class="number-card">
+                <div class="number-large">500+</div>
+                <div class="number-label">Enterprise Sites Deployed</div>
+            </div>
+            <div class="number-card">
+                <div class="number-large">99.9%</div>
+                <div class="number-label">Uptime SLA Guarantee</div>
+            </div>
+            <div class="number-card">
+                <div class="number-large">3 Weeks</div>
+                <div class="number-label">Average Deployment Timeline</div>
+            </div>
+            <div class="number-card">
+                <div class="number-large">$0</div>
+                <div class="number-label">Upfront Until Operational</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="section-process fade-in-section" id="process">
+        <div class="process-header">
+            <div class="process-title">HERE'S HOW WE DEPLOY YOUR ENTERPRISE STARLINK NETWORK</div>
+            <div class="process-subtitle">Our proven deployment playbook removes risk at every stage.</div>
+        </div>
+
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">STEP 01</div>
+                <div class="step-title">SITE ASSESSMENT</div>
+                <div class="step-description">
+                    We conduct a comprehensive technical and operational assessment — satellite visibility, signal quality, weather patterns, integration requirements. We identify every constraint before we commit to a timeline. 3-5 business days.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">STEP 02</div>
+                <div class="step-title">CUSTOM DEPLOYMENT PLAN</div>
+                <div class="step-description">
+                    Based on your assessment, we create a deployment roadmap tailored to your sites, your timeline, and your operational constraints. No generic templates. No guessing.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">STEP 03</div>
+                <div class="step-title">PROCUREMENT & LOGISTICS</div>
+                <div class="step-description">
+                    We handle all hardware procurement, vendor coordination, shipping logistics, and inventory management. Your team doesn't touch any of this.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">STEP 04</div>
+                <div class="step-title">INSTALLATION & ACTIVATION</div>
+                <div class="step-description">
+                    Our certified technicians install and activate each site. Real-time status dashboard so you see exactly where every deployment stands. 2-3 weeks typical.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">STEP 05</div>
+                <div class="step-title">VALIDATION & VERIFICATION</div>
+                <div class="step-description">
+                    We run comprehensive network validation tests, performance benchmarking, and security verification. Only when your site passes all checks do we mark it operational. Only then do you pay.
+                </div>
+            </div>
+        </div>
+
+        <div class="process-cta">
+            <a href="#assessment" class="btn-primary">Start With Your Free Assessment</a>
+        </div>
+    </section>
+
+    <!-- ===== PARTNERS SECTION ===== -->
+    <section class="section-partners fade-in-section">
+        <div class="partners-title">ENTERPRISE-GRADE CONNECTIVITY PARTNERS</div>
+        <div class="partners-grid">
+            <div class="partner-item">Cogent</div>
+            <div class="partner-item">Verizon Business</div>
+            <div class="partner-item">Frontier</div>
+            <div class="partner-item">Cox Business</div>
+            <div class="partner-item">AT&T Partner Exchange</div>
+            <div class="partner-item">Starlink Enterprise</div>
+        </div>
+    </section>
+
+    <!-- ===== CASE STUDIES SECTION ===== -->
+    <section class="section-cases fade-in-section">
+        <div class="cases-header">
+            <div class="cases-title">DEPLOYMENT RESULTS THAT SPEAK FOR THEMSELVES</div>
+        </div>
+
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-title">Multi-Site Healthcare Network</div>
+
+                <div class="case-section">
+                    <div class="case-section-label">Challenge</div>
+                    <div class="case-section-text">14 clinic locations with unreliable broadband, 4-hour average failover time</div>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-label">Solution</div>
+                    <div class="case-section-text">Starlink enterprise deployment across all 14 sites in 19 days</div>
+                </div>
+
+                <div class="case-results">
+                    <div class="case-result-item"><strong>99.97% Uptime</strong> | Failover < 2 minutes | $186K annual savings vs MPLS</div>
+                </div>
+
+                <div class="case-footer">
+                    Deployed and operational before their MPLS contract renewal deadline
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-title">National Retail Chain - DCs</div>
+
+                <div class="case-section">
+                    <div class="case-section-label">Challenge</div>
+                    <div class="case-section-text">8 distribution centers in rural areas with inconsistent connectivity affecting logistics software</div>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-label">Solution</div>
+                    <div class="case-section-text">Starlink primary + existing broadband as backup across all facilities</div>
+                </div>
+
+                <div class="case-results">
+                    <div class="case-result-item"><strong>Zero Downtime</strong> in 6 months | 340% bandwidth increase | 23-day deployment</div>
+                </div>
+
+                <div class="case-footer">
+                    From signed contract to verified operational across 8 sites in under a month
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-title">Financial Services - Branch Offices</div>
+
+                <div class="case-section">
+                    <div class="case-section-label">Challenge</div>
+                    <div class="case-section-text">22 branch offices needed redundant connectivity for compliance</div>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-label">Solution</div>
+                    <div class="case-section-text">Starlink enterprise as secondary WAN with automatic failover</div>
+                </div>
+
+                <div class="case-results">
+                    <div class="case-result-item"><strong>100% Compliance</strong> audit pass rate | SOC2 verified | $312K annual savings</div>
+                </div>
+
+                <div class="case-footer">
+                    Enterprise-grade redundancy without enterprise-grade complexity
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OBJECTIONS SECTION ===== -->
+    <section class="section-objections fade-in-section">
+        <div class="objections-header">
+            <div class="objections-title">QUESTIONS WE HEAR FROM ENTERPRISE TEAMS</div>
+        </div>
+
+        <div class="objections-grid">
+            <div class="objection-card">
+                <div class="objection-question">This is just consumer Starlink, right?</div>
+                <div class="objection-answer">
+                    No. Enterprise Starlink includes dedicated bandwidth options, business-class 99.9% SLA, priority support, static IP provisioning, and integration with your existing network architecture. This is enterprise infrastructure.
+                </div>
+            </div>
+
+            <div class="objection-card">
+                <div class="objection-question">What about security and compliance?</div>
+                <div class="objection-answer">
+                    SOC2 Type II certified. Encrypted backhaul available. HIPAA and FedRAMP-eligible architecture. Compliance verified before go-live. Your deployment meets the same standards as your existing enterprise WAN.
+                </div>
+            </div>
+
+            <div class="objection-card">
+                <div class="objection-question">Will this actually work at our locations?</div>
+                <div class="objection-answer">
+                    We assess before we deploy. Satellite visibility, terrain, weather patterns, obstructions — all evaluated in our technical assessment. If a site isn't viable, we tell you before you commit. No wasted time, no wasted money.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section-faq fade-in-section">
+        <div class="faq-header">
+            <div class="faq-title">FREQUENTLY ASKED QUESTIONS</div>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-question-text">How long does deployment actually take?</div>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-text">From assessment to operational verification: 3-5 weeks typical. Initial site assessment takes 3-5 business days. Installation and activation typically 2-3 weeks, depending on site count and complexity. Validation and verification adds 3-5 days. We'll give you a precise timeline after your initial assessment.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-question-text">What happens if something goes wrong?</div>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-text">You don't pay until it's fixed. We include 24/7 priority support as part of our service. Your deployment comes with a 99.9% uptime SLA. If we miss our targets, we credit your account. If a site isn't viable during assessment, we tell you upfront with alternative recommendations.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-question-text">Can you deploy across multiple sites simultaneously?</div>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-text">Yes. We manage multi-site deployments as a coordinated project with dedicated teams. We've deployed to 30+ sites in parallel. The more sites, the better we can optimize logistics and reduce per-site deployment time. We'll discuss optimal deployment sequencing during your assessment.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-question-text">How does pricing compare to MPLS?</div>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-text">Significantly cheaper. Enterprise Starlink typically costs 40-60% less than comparable MPLS circuits, with faster deployment and better performance in rural areas. MPLS also locks you into long-term contracts. We bill monthly with no long-term commitments. Let's run the numbers during your assessment call.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-question-text">What ongoing support do you provide?</div>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-text">24/7 priority support, proactive network monitoring, automatic failover management, quarterly performance reviews, and direct access to your deployment engineer. We also handle all firmware updates and hardware replacements under warranty. Your team doesn't manage the network alone.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-question-text">What if our site isn't viable for Starlink?</div>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-text">We identify this during the technical assessment — before you're committed to anything. If Starlink won't work, we'll recommend alternatives: fixed wireless, traditional broadband upgrades, or hybrid solutions. We're not in the business of forcing bad deployments. Your success is our success.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA SECTION ===== -->
+    <section class="section-final-cta fade-in-section" id="assessment">
+        <div class="final-cta-container">
+            <div class="final-cta-heading">Book Your Deployment Assessment</div>
+            <div class="final-cta-text">
+                Enterprise deployment is complex. Our job is to make it simple. Start with a free 15-minute assessment call — we'll evaluate your sites, identify risks, and give you a deployment timeline. No obligation.
+            </div>
+
+            <div class="calendly-embed">
+                <iframe src="https://calendly.com/2pifi/assessment" width="100%" height="700" frameborder="0"></iframe>
+            </div>
+
+            <div class="final-fallback">
+                <div class="final-fallback-text">Prefer to talk first? Email or call to get started.</div>
+                <a href="mailto:hello@2pifi.com" class="btn-primary">Contact Us Directly</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-text">
+            © 2026 2pifi. Enterprise Starlink Deployment Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // ===== PASSWORD GATE LOGIC =====
+        (function() {
+            const CORRECT_PASSWORD = 'starlink';
+            const SESSION_KEY = 'pageAuthenticated';
+
+            const passwordGate = document.getElementById('passwordGate');
+            const passwordInput = document.getElementById('passwordInput');
+            const passwordButton = document.getElementById('passwordButton');
+            const passwordError = document.getElementById('passwordError');
+
+            // Check if already authenticated in this session
+            function checkAuthentication() {
+                if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+                    removeGate();
+                    return true;
+                }
+                return false;
+            }
+
+            // Remove the gate and show the page
+            function removeGate() {
+                passwordGate.classList.add('hidden');
+                setTimeout(() => {
+                    passwordGate.style.display = 'none';
+                }, 500);
+            }
+
+            // Verify password
+            function verifyPassword() {
+                const enteredPassword = passwordInput.value;
+
+                if (enteredPassword === CORRECT_PASSWORD) {
+                    sessionStorage.setItem(SESSION_KEY, 'true');
+                    passwordError.classList.remove('show');
+                    passwordError.textContent = '';
+                    removeGate();
+                } else {
+                    passwordError.textContent = 'Incorrect passcode. Please try again.';
+                    passwordError.classList.add('show');
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                }
+            }
+
+            // Event listeners
+            passwordButton.addEventListener('click', verifyPassword);
+            passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    verifyPassword();
+                }
+            });
+
+            // Initialize
+            if (!checkAuthentication()) {
+                passwordInput.focus();
+            }
+        })();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
