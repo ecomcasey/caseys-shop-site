@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Casey's — Where Every Aisle Leads Somewhere</title>
     <!-- Favicon: Rooster silhouette in glowing ring -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Cellipse cx='32' cy='32' rx='20' ry='20' fill='none' stroke='%23e1251b' stroke-width='2.5'/%3E%3Cellipse cx='32' cy='32' rx='20' ry='20' fill='none' stroke='%23ff6b35' stroke-width='0.8' opacity='0.4'/%3E%3Cpath d='M32 18c-1.5 0-2.5 1-3 2.5-.3.8-.2 1.5.2 2l.5.8c-2 .5-3.5 2-4 3.8-.3 1 0 2 .5 2.8l-3.2 1.5c-.5.3-.8.8-.5 1.3l1 2c.2.4.7.6 1.2.5l3-1c.5 1.2 1.5 2 2.8 2.3v2.5l-3.5 3c-.4.3-.5.9-.2 1.3l.8 1c.3.3.8.4 1.2.2l3.2-2h3l3.2 2c.4.2.9.2 1.2-.2l.8-1c.3-.4.2-1-.2-1.3l-3.5-3v-2.5c1.3-.3 2.3-1.1 2.8-2.3l3 1c.5.2 1 0 1.2-.5l1-2c.3-.5 0-1-.5-1.3l-3.2-1.5c.5-.8.8-1.8.5-2.8-.5-1.8-2-3.3-4-3.8l.5-.8c.4-.5.5-1.2.2-2-.5-1.5-1.5-2.5-3-2.5zm-1 7c.8 0 1.5.7 1.5 1.5S31.8 28 31 28s-1.5-.7-1.5-1.5S30.2 25 31 25z' fill='%23e1251b'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Cellipse cx='32' cy='32' rx='20' ry='20' fill='none' stroke='%23e1251b' stroke-width='2.5'/%3E%3Cellipse cx='32' cy='32' rx='20' ry='20' fill='none' stroke='%23ff6b35' stroke-width='0.8' opacity='0.4'/%3E%3Cpath d='M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z' fill='%23e1251b'/%3E%3C/svg%3E">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
@@ -257,18 +257,15 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: 700px;
-            opacity: 0.03;
+            transform: translate(-50%, -50%) scale(0.7);
+            width: 800px;
+            height: 800px;
+            opacity: 0.12;
             z-index: 3;
-            animation: roosterBreathe 8s ease-in-out infinite;
+            /* Animation removed - controlled by scroll JS */
         }
 
-        @keyframes roosterBreathe {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.03; }
-            50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.05; }
-        }
+        /* Scroll-driven rooster animation removed @keyframes roosterBreathe */
 
         /* Eclipse / Glow Ring */
         .eclipse {
@@ -639,7 +636,7 @@
             right: -20px;
             width: 120px;
             height: 120px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10zm-3 19c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z' fill='rgba(225,37,27,0.04)'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z' fill='rgba(225,37,27,0.04)'/%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
             opacity: 0;
@@ -699,45 +696,42 @@
             right: 30px;
             font-size: 20px;
             color: var(--red);
-            opacity: 0;
-            transform: translate(-10px, 10px);
-            transition: all 0.4s;
+            transition: transform 0.3s;
         }
 
         .venture-card:hover .venture-arrow {
-            opacity: 1;
-            transform: translate(0, 0);
+            transform: translate(3px, -3px);
         }
 
-        /* ===== MARQUEE / HORIZONTAL SCROLL ===== */
+        /* ===== MARQUEE ===== */
         .marquee-section {
-            padding: 80px 0;
+            padding: 40px 0;
             overflow: hidden;
-            position: relative;
+            border-top: 1px solid rgba(225, 37, 27, 0.1);
+            border-bottom: 1px solid rgba(225, 37, 27, 0.1);
             z-index: 5;
+            position: relative;
         }
 
         .marquee {
             display: flex;
             white-space: nowrap;
-            animation: marqueeScroll 20s linear infinite;
+            animation: marqueeScroll 40s linear infinite;
+            gap: 40px;
         }
 
         .marquee span {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(60px, 10vw, 140px);
-            font-weight: 900;
-            font-style: italic;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(225, 37, 27, 0.15);
-            padding: 0 40px;
-            user-select: none;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(225, 37, 27, 0.5);
+            padding: 0 20px;
         }
 
-        .marquee .marquee-rooster-icon {
-            display: inline-flex;
-            align-items: center;
-            padding: 0 20px;
+        .marquee-rooster-icon {
+            display: inline-block;
+            vertical-align: middle;
         }
 
         @keyframes marqueeScroll {
@@ -745,58 +739,55 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* ===== SPECIALS BOARD ===== */
+        /* ===== SPECIALS ===== */
         .specials {
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
         }
 
         .specials-heading {
             font-family: 'Playfair Display', serif;
             font-size: clamp(36px, 5vw, 64px);
             font-weight: 900;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            line-height: 1.1;
         }
 
         .special-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(225, 37, 27, 0.2);
             transition: all 0.4s;
-            cursor: default;
         }
 
         .special-item:hover {
             padding-left: 20px;
-            border-color: rgba(225, 37, 27, 0.2);
+            border-color: rgba(225, 37, 27, 0.5);
         }
 
-        .special-item:hover .special-name {
-            color: var(--red);
+        .special-item div {
+            flex: 1;
         }
 
         .special-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            transition: color 0.4s;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--cream);
+            letter-spacing: 1px;
         }
 
         .special-price {
-            font-size: 13px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            font-size: 14px;
             color: var(--grey);
-            font-weight: 500;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .special-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(225, 37, 27, 0.15);
             color: var(--red);
             font-size: 10px;
             font-weight: 600;
@@ -954,6 +945,69 @@
             z-index: 1;
         }
 
+        /* ===== SCREEN SHAKE ANIMATION ===== */
+        @keyframes screenShake {
+            0%, 100% { transform: translate(0,0); }
+            10% { transform: translate(-8px, 4px); }
+            20% { transform: translate(6px, -6px); }
+            30% { transform: translate(-4px, 8px); }
+            40% { transform: translate(8px, -2px); }
+            50% { transform: translate(-6px, -4px); }
+            60% { transform: translate(4px, 6px); }
+            70% { transform: translate(-2px, -8px); }
+            80% { transform: translate(6px, 4px); }
+            90% { transform: translate(-4px, -2px); }
+        }
+
+        .screen-shake {
+            animation: screenShake 0.3s ease-out;
+        }
+
+        /* ===== RED FLASH OVERLAY ===== */
+        .red-flash {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(225, 37, 27, 0.3);
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+
+        .red-flash.active {
+            opacity: 1;
+            transition: opacity 0.05s;
+        }
+
+        /* ===== PIXEL FRAGMENTS ===== */
+        .pixel-fragment {
+            position: fixed;
+            background: var(--red);
+            pointer-events: none;
+            z-index: 20;
+            opacity: 0;
+        }
+
+        /* ===== MOTION LINES DURING CHARGE ===== */
+        .motion-lines {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0;
+        }
+
+        .motion-line {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(225,37,27,0.3), transparent);
+            transform-origin: center center;
+        }
+
         /* ===== MOBILE ===== */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
@@ -1012,6 +1066,9 @@
 </head>
 <body>
 
+    <!-- Red Flash Overlay (for rooster impact) -->
+    <div class="red-flash" id="redFlash"></div>
+
     <!-- Cursor Glow -->
     <div class="cursor-glow" id="cursorGlow"></div>
 
@@ -1025,23 +1082,23 @@
     <div class="ticker">
         <div class="ticker-inner">
             <span>Fresh deals at every pump</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Ask about our venture capital loyalty card</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Now serving digital transformation at all locations</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>The rooster crows at dawn — and at every deploy</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Roller grill ventures now available</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Fresh deals at every pump</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Ask about our venture capital loyalty card</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Now serving digital transformation at all locations</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>The rooster crows at dawn — and at every deploy</span>
-            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="white"/></svg></span>
+            <span><svg class="ticker-rooster" width="14" height="14" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="white"/></svg></span>
             <span>Roller grill ventures now available</span>
         </div>
     </div>
@@ -1050,13 +1107,29 @@
     <nav>
         <a href="#" class="nav-logo">
             <svg class="nav-logo-rooster" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Stylized modern rooster - angular, edgy weather vane style -->
-                <path d="M55 15c0-3-2-5-5-5s-5 2-5 5c0 1.5.7 2.8 1.7 3.7L44 22c-6 2-10 7-11.5 13l-1 .5-8 3.5c-1.5.7-2 2.5-1.2 4l2.5 5c.6 1.2 2 1.7 3.2 1.2l7-3c1.5 3.5 4.5 6 8 7v5.8L33 68c-1.2 1-1.5 2.8-.5 4l2 2.5c.8 1 2.2 1.2 3.3.5L46 70h8l8.2 5c1 .7 2.5.5 3.3-.5l2-2.5c1-1.2.7-3-.5-4L57 59v-5.8c3.5-1 6.5-3.5 8-7l7 3c1.2.5 2.6 0 3.2-1.2l2.5-5c.8-1.5.3-3.3-1.2-4l-8-3.5-1-.5C66 29 62 24 56 22l-2.7-3.3c1-.9 1.7-2.2 1.7-3.7z" fill="white"/>
-                <circle cx="46" cy="29" r="3" fill="var(--dark, #0a0a0a)"/>
-                <!-- Comb -->
-                <path d="M45 10c1-2 3-3 5-3s4 1 5 3c.5 1 .5 2.2 0 3.2-.3.5-.7 1-1.2 1.3.5.3 1 .8 1.2 1.3.5 1 .5 2.2 0 3.2" stroke="white" stroke-width="1.5" fill="none" opacity="0.4"/>
-                <!-- Tail feathers -->
-                <path d="M56 22c3-2 6-2 8 0M58 20c3-3 7-3 9 0M57 24c4-1 7 0 9 2" stroke="white" stroke-width="1.2" fill="none" opacity="0.3"/>
+                <!-- Comb - 3 rounded bumps on top -->
+                <path d="M35 22 C35 18 38 16 40 18 C40 14 43 12 45 15 C46 11 49 10 50 14 C50 17 48 19 46 20 L38 24 Z" fill="white"/>
+                <!-- Head -->
+                <ellipse cx="40" cy="28" rx="8" ry="7" fill="white"/>
+                <!-- Eye -->
+                <circle cx="43" cy="27" r="1.5" fill="var(--dark, #0a0a0a)"/>
+                <!-- Beak pointing right -->
+                <path d="M48 27 L53 29 L48 31 Z" fill="#ff6b35"/>
+                <!-- Wattle -->
+                <path d="M42 33 C42 35 40 36 39 34 C39 32 40 31 42 33Z" fill="white"/>
+                <!-- Body -->
+                <ellipse cx="38" cy="48" rx="14" ry="14" fill="white"/>
+                <!-- Wing -->
+                <path d="M28 42 C25 46 24 52 27 56 C30 52 31 47 30 42Z" fill="#e1251b" opacity="0.3"/>
+                <!-- Tail feathers sweeping up-left -->
+                <path d="M24 42 C16 38 10 32 8 24 C12 28 18 36 24 42Z" fill="white" opacity="0.8"/>
+                <path d="M24 44 C16 42 8 38 6 30 C10 34 18 40 24 44Z" fill="white" opacity="0.6"/>
+                <!-- Legs -->
+                <line x1="36" y1="60" x2="34" y2="72" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="40" y1="60" x2="42" y2="72" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Feet -->
+                <path d="M34 72 L30 73 M34 72 L34 75 M34 72 L36 74" stroke="white" stroke-width="1" stroke-linecap="round"/>
+                <path d="M42 72 L40 74 M42 72 L42 75 M42 72 L44 73" stroke="white" stroke-width="1" stroke-linecap="round"/>
             </svg>
             <span class="nav-logo-text">Casey's<span class="dot">.</span></span>
         </a>
@@ -1069,9 +1142,38 @@
 
     <!-- Hero -->
     <section class="hero">
+        <!-- Motion lines for rooster charge effect -->
+        <div class="motion-lines" id="motionLines"></div>
+
+        <!-- Pixel fragments (pre-created, triggered on impact) -->
+        <div id="pixelFragments"></div>
+
         <!-- Giant Rooster silhouette behind eclipse -->
         <svg class="hero-rooster-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 5c-5 0-9 4-10.5 9-1 2.8-.6 5.2.6 7.2l2 2.8c-7 2-12 7-14 13.5-1 3.5 0 7 2 10l-11.5 5.5c-2 1-2.8 2.8-2 5l3.5 7c.7 1.2 2.5 2 4 1.5l11-3.5c2 4 5 7 10 8.5v9l-12.5 10.5c-1.2 1-1.8 3-.6 4.8l2.8 3.5c1 1 2.8 1.2 4.2.6L51 93h8.5l12 7c1.2.7 3 .5 4.2-.6l2.8-3.5c1-1.2.6-3.5-.6-4.8L65.5 80.5v-9c5-1.5 8-4.5 10-8.5l11 3.5c1.5.5 3.2 0 4-1.5l3.5-7c.8-2 0-4-2-5L80.5 47.5c2-3 3-6.5 2-10-2-6.5-7-11.5-14-13.5l2-2.8c1.2-2 1.6-4.5.6-7.2C69.5 9 65.5 5 60.5 5h-11zm-4 24c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5z" fill="rgba(225,37,27,1)"/>
+            <!-- Comb - 3 rounded bumps on top -->
+            <path d="M35 22 C35 18 38 16 40 18 C40 14 43 12 45 15 C46 11 49 10 50 14 C50 17 48 19 46 20 L38 24 Z" fill="rgba(225,37,27,0.7)"/>
+            <!-- Head -->
+            <ellipse cx="40" cy="28" rx="8" ry="7" fill="rgba(225,37,27,0.7)"/>
+            <!-- Eye -->
+            <circle cx="43" cy="27" r="1.5" fill="#0a0a0a"/>
+            <!-- Beak pointing right -->
+            <path d="M48 27 L53 29 L48 31 Z" fill="rgba(255,107,53,0.8)"/>
+            <!-- Wattle -->
+            <path d="M42 33 C42 35 40 36 39 34 C39 32 40 31 42 33Z" fill="rgba(225,37,27,0.7)"/>
+            <!-- Body -->
+            <ellipse cx="38" cy="48" rx="14" ry="14" fill="rgba(225,37,27,0.7)"/>
+            <!-- Wing -->
+            <path d="M28 42 C25 46 24 52 27 56 C30 52 31 47 30 42Z" fill="rgba(225,37,27,0.6)"/>
+            <!-- Tail feathers sweeping up-left -->
+            <path d="M24 42 C16 38 10 32 8 24 C12 28 18 36 24 42Z" fill="rgba(225,37,27,0.65)" opacity="0.9"/>
+            <path d="M24 44 C16 42 8 38 6 30 C10 34 18 40 24 44Z" fill="rgba(225,37,27,0.65)" opacity="0.8"/>
+            <path d="M26 46 C18 46 10 42 8 36 C12 38 20 42 26 46Z" fill="rgba(225,37,27,0.65)" opacity="0.7"/>
+            <!-- Legs -->
+            <line x1="36" y1="60" x2="34" y2="72" stroke="rgba(225,37,27,0.7)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="40" y1="60" x2="42" y2="72" stroke="rgba(225,37,27,0.7)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Feet -->
+            <path d="M34 72 L30 74 M34 72 L34 76 M34 72 L36 75" stroke="rgba(225,37,27,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M42 72 L40 75 M42 72 L42 76 M42 72 L44 74" stroke="rgba(225,37,27,0.7)" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
 
         <div class="eclipse"></div>
@@ -1107,17 +1209,17 @@
     <div class="marquee-section">
         <div class="marquee">
             <span>Ecommerce</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Ventures</span>
             <span>Digital</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Fueled</span>
             <span>Growth</span>
             <span>Ecommerce</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Ventures</span>
             <span>Digital</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Fueled</span>
             <span>Growth</span>
         </div>
@@ -1138,7 +1240,30 @@
             <!-- Rooster Weather Vane Divider -->
             <div class="divider">
                 <svg class="divider-rooster" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10zm-3 19c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z" fill="var(--red)"/>
+                    <!-- Comb - 3 rounded bumps on top -->
+                    <path d="M35 22 C35 18 38 16 40 18 C40 14 43 12 45 15 C46 11 49 10 50 14 C50 17 48 19 46 20 L38 24 Z" fill="var(--red)"/>
+                    <!-- Head -->
+                    <ellipse cx="40" cy="28" rx="8" ry="7" fill="var(--red)"/>
+                    <!-- Eye -->
+                    <circle cx="43" cy="27" r="1.5" fill="#0a0a0a"/>
+                    <!-- Beak pointing right -->
+                    <path d="M48 27 L53 29 L48 31 Z" fill="var(--red)"/>
+                    <!-- Wattle -->
+                    <path d="M42 33 C42 35 40 36 39 34 C39 32 40 31 42 33Z" fill="var(--red)"/>
+                    <!-- Body -->
+                    <ellipse cx="38" cy="48" rx="14" ry="14" fill="var(--red)"/>
+                    <!-- Wing -->
+                    <path d="M28 42 C25 46 24 52 27 56 C30 52 31 47 30 42Z" fill="var(--red)"/>
+                    <!-- Tail feathers sweeping up-left -->
+                    <path d="M24 42 C16 38 10 32 8 24 C12 28 18 36 24 42Z" fill="var(--red)" opacity="0.9"/>
+                    <path d="M24 44 C16 42 8 38 6 30 C10 34 18 40 24 44Z" fill="var(--red)" opacity="0.8"/>
+                    <path d="M26 46 C18 46 10 42 8 36 C12 38 20 42 26 46Z" fill="var(--red)" opacity="0.7"/>
+                    <!-- Legs -->
+                    <line x1="36" y1="60" x2="34" y2="72" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="40" y1="60" x2="42" y2="72" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Feet -->
+                    <path d="M34 72 L30 74 M34 72 L34 76 M34 72 L36 75" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M42 72 L40 75 M42 72 L42 76 M42 72 L44 74" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
                 <div class="divider-line"></div>
                 <div class="divider-compass">
@@ -1223,16 +1348,16 @@
     <div class="marquee-section">
         <div class="marquee" style="animation-direction: reverse; animation-duration: 25s;">
             <span>Always Open</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Pump & Hustle</span>
             <span>Fresh Daily</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Midwest Made</span>
             <span>Always Open</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Pump & Hustle</span>
             <span>Fresh Daily</span>
-            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
+            <span class="marquee-rooster-icon"><svg width="60" height="60" viewBox="0 0 100 100"><path d="M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z" fill="none" stroke="rgba(225,37,27,0.15)" stroke-width="2"/></svg></span>
             <span>Midwest Made</span>
         </div>
     </div>
@@ -1274,7 +1399,30 @@
     <!-- Rooster Call-Out -->
     <div class="rooster-callout reveal">
         <svg class="rooster-callout-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 5c-5 0-9 4-10.5 9-1 2.8-.6 5.2.6 7.2l2 2.8c-7 2-12 7-14 13.5-1 3.5 0 7 2 10l-11.5 5.5c-2 1-2.8 2.8-2 5l3.5 7c.7 1.2 2.5 2 4 1.5l11-3.5c2 4 5 7 10 8.5v9l-12.5 10.5c-1.2 1-1.8 3-.6 4.8l2.8 3.5c1 1 2.8 1.2 4.2.6L51 93h8.5l12 7c1.2.7 3 .5 4.2-.6l2.8-3.5c1-1.2.6-3.5-.6-4.8L65.5 80.5v-9c5-1.5 8-4.5 10-8.5l11 3.5c1.5.5 3.2 0 4-1.5l3.5-7c.8-2 0-4-2-5L80.5 47.5c2-3 3-6.5 2-10-2-6.5-7-11.5-14-13.5l2-2.8c1.2-2 1.6-4.5.6-7.2C69.5 9 65.5 5 60.5 5h-11z" fill="rgba(225,37,27,0.06)"/>
+            <!-- Comb - 3 rounded bumps on top -->
+            <path d="M35 22 C35 18 38 16 40 18 C40 14 43 12 45 15 C46 11 49 10 50 14 C50 17 48 19 46 20 L38 24 Z" fill="rgba(225,37,27,0.1)"/>
+            <!-- Head -->
+            <ellipse cx="40" cy="28" rx="8" ry="7" fill="rgba(225,37,27,0.1)"/>
+            <!-- Eye -->
+            <circle cx="43" cy="27" r="1.5" fill="rgba(225,37,27,0.15)"/>
+            <!-- Beak pointing right -->
+            <path d="M48 27 L53 29 L48 31 Z" fill="rgba(225,37,27,0.08)"/>
+            <!-- Wattle -->
+            <path d="M42 33 C42 35 40 36 39 34 C39 32 40 31 42 33Z" fill="rgba(225,37,27,0.1)"/>
+            <!-- Body -->
+            <ellipse cx="38" cy="48" rx="14" ry="14" fill="rgba(225,37,27,0.1)"/>
+            <!-- Wing -->
+            <path d="M28 42 C25 46 24 52 27 56 C30 52 31 47 30 42Z" fill="rgba(225,37,27,0.08)"/>
+            <!-- Tail feathers sweeping up-left -->
+            <path d="M24 42 C16 38 10 32 8 24 C12 28 18 36 24 42Z" fill="rgba(225,37,27,0.09)" opacity="0.9"/>
+            <path d="M24 44 C16 42 8 38 6 30 C10 34 18 40 24 44Z" fill="rgba(225,37,27,0.09)" opacity="0.8"/>
+            <path d="M26 46 C18 46 10 42 8 36 C12 38 20 42 26 46Z" fill="rgba(225,37,27,0.09)" opacity="0.7"/>
+            <!-- Legs -->
+            <line x1="36" y1="60" x2="34" y2="72" stroke="rgba(225,37,27,0.1)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="40" y1="60" x2="42" y2="72" stroke="rgba(225,37,27,0.1)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Feet -->
+            <path d="M34 72 L30 74 M34 72 L34 76 M34 72 L36 75" stroke="rgba(225,37,27,0.1)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M42 72 L40 75 M42 72 L42 76 M42 72 L44 74" stroke="rgba(225,37,27,0.1)" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <p class="rooster-callout-text">
             "Every gas station needs a rooster on the roof.
@@ -1288,7 +1436,30 @@
         <div class="footer-top">
             <div class="footer-brand-wrap">
                 <svg class="footer-rooster" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10zm-3 19c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z" fill="var(--red)"/>
+                    <!-- Comb - 3 rounded bumps on top -->
+                    <path d="M35 22 C35 18 38 16 40 18 C40 14 43 12 45 15 C46 11 49 10 50 14 C50 17 48 19 46 20 L38 24 Z" fill="var(--red)"/>
+                    <!-- Head -->
+                    <ellipse cx="40" cy="28" rx="8" ry="7" fill="var(--red)"/>
+                    <!-- Eye -->
+                    <circle cx="43" cy="27" r="1.5" fill="#0a0a0a"/>
+                    <!-- Beak pointing right -->
+                    <path d="M48 27 L53 29 L48 31 Z" fill="var(--red)"/>
+                    <!-- Wattle -->
+                    <path d="M42 33 C42 35 40 36 39 34 C39 32 40 31 42 33Z" fill="var(--red)"/>
+                    <!-- Body -->
+                    <ellipse cx="38" cy="48" rx="14" ry="14" fill="var(--red)"/>
+                    <!-- Wing -->
+                    <path d="M28 42 C25 46 24 52 27 56 C30 52 31 47 30 42Z" fill="var(--red)"/>
+                    <!-- Tail feathers sweeping up-left -->
+                    <path d="M24 42 C16 38 10 32 8 24 C12 28 18 36 24 42Z" fill="var(--red)" opacity="0.9"/>
+                    <path d="M24 44 C16 42 8 38 6 30 C10 34 18 40 24 44Z" fill="var(--red)" opacity="0.8"/>
+                    <path d="M26 46 C18 46 10 42 8 36 C12 38 20 42 26 46Z" fill="var(--red)" opacity="0.7"/>
+                    <!-- Legs -->
+                    <line x1="36" y1="60" x2="34" y2="72" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="40" y1="60" x2="42" y2="72" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Feet -->
+                    <path d="M34 72 L30 74 M34 72 L34 76 M34 72 L36 75" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M42 72 L40 75 M42 72 L42 76 M42 72 L44 74" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
                 <div class="footer-brand">Casey's<span class="dot">.</span></div>
             </div>
@@ -1322,7 +1493,7 @@
 
     <script>
         // ===== ROOSTER SVG PATH (reusable) =====
-        const ROOSTER_PATH = "M50 10c-4 0-7 3-8.5 7-.8 2.2-.5 4.2.5 5.8l1.5 2.2c-5.5 1.5-9.5 5.5-11 10.5-.8 2.8 0 5.5 1.5 7.8l-9 4.2c-1.5.8-2.2 2.2-1.5 3.8l2.8 5.5c.5 1 2 1.5 3.2 1.2l8.5-2.8c1.5 3.2 4 5.5 7.5 6.5v7l-10 8.5c-1 .8-1.5 2.5-.5 3.8l2.2 2.8c.8.8 2.2 1 3.5.5l9-5.5h8.5l9 5.5c1 .5 2.5.5 3.5-.5l2.2-2.8c.8-1 .5-2.8-.5-3.8l-10-8.5v-7c3.5-1 6-3.2 7.5-6.5l8.5 2.8c1.2.5 2.8 0 3.2-1.2l2.8-5.5c.8-1.5 0-3-1.5-3.8l-9-4.2c1.5-2.2 2.2-5 1.5-7.8-1.5-5-5.5-9-11-10.5l1.5-2.2c1-1.5 1.2-3.5.5-5.8C57 13 54 10 50 10z";
+        const ROOSTER_PATH = "M42 20 C42 16 45 13 47 16 C47 12 50 10 52 14 C52 17 50 19 48 20 C51 21 54 24 54 28 L58 27 L54 30 C53 34 54 40 54 46 C54 54 48 60 42 62 L44 70 L46 76 L43 76 L42 72 L40 68 L38 68 L36 72 L33 76 L30 76 L32 70 L34 62 C28 60 22 54 22 46 C22 38 26 32 30 28 C22 22 14 14 10 8 C16 12 22 20 28 24 C20 16 16 8 14 2 C18 8 24 16 28 22 C30 18 34 16 38 18 C40 16 42 18 42 20 Z M48 26 C47 26 46 27 46 28 C46 29 47 30 48 30 C49 30 50 29 50 28 C50 27 49 26 48 26Z";
 
         // ===== CURSOR GLOW =====
         const glow = document.getElementById('cursorGlow');
@@ -1401,19 +1572,135 @@
 
         reveals.forEach(el => observer.observe(el));
 
-        // ===== PARALLAX ON ECLIPSE + HERO ROOSTER =====
+        // ===== ROOSTER CHARGE + SMASH (Multi-phase scroll animation) =====
         const eclipse = document.querySelector('.eclipse');
         const heroRooster = document.querySelector('.hero-rooster-bg');
+        const redFlash = document.getElementById('redFlash');
+        const heroSection = document.querySelector('.hero');
+        let hasShattered = false;
+        let fragments = [];
+
+        // Create motion lines for charging phase
+        const motionLinesContainer = document.getElementById('motionLines');
+        for (let i = 0; i < 12; i++) {
+            const line = document.createElement('div');
+            line.className = 'motion-line';
+            line.style.height = (80 + Math.random() * 200) + 'px';
+            line.style.transform = `rotate(${i * 30}deg) translateY(-${100 + Math.random() * 150}px)`;
+            line.style.opacity = 0;
+            motionLinesContainer.appendChild(line);
+        }
+        const motionLines = motionLinesContainer.querySelectorAll('.motion-line');
+
+        // Create pixel fragments (pre-create, hidden until impact)
+        const fragmentContainer = document.getElementById('pixelFragments');
+        for (let i = 0; i < 50; i++) {
+            const frag = document.createElement('div');
+            frag.className = 'pixel-fragment';
+            const size = 6 + Math.random() * 16;
+            frag.style.width = size + 'px';
+            frag.style.height = size + 'px';
+            // Random shade of red
+            const r = 200 + Math.floor(Math.random() * 55);
+            const g = Math.floor(Math.random() * 60);
+            const b = Math.floor(Math.random() * 40);
+            frag.style.background = `rgb(${r},${g},${b})`;
+            // Store random velocity
+            frag.dataset.vx = (Math.random() - 0.5) * 2;
+            frag.dataset.vy = (Math.random() - 0.5) * 2;
+            frag.dataset.rotation = (Math.random() - 0.5) * 720;
+            fragmentContainer.appendChild(frag);
+            fragments.push(frag);
+        }
+
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
-            const heroHeight = document.querySelector('.hero').offsetHeight;
+            const heroHeight = heroSection.offsetHeight;
+            const progress = Math.min(scrollY / heroHeight, 1);
+
+            // Eclipse parallax (keep existing behavior)
             if (scrollY < heroHeight) {
-                const progress = scrollY / heroHeight;
                 eclipse.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px)) scale(${1 + progress * 0.2})`;
                 eclipse.style.opacity = 1 - progress * 0.8;
-                // Rooster parallax: moves slower, creates depth
-                heroRooster.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px)) scale(${1 + progress * 0.1})`;
-                heroRooster.style.opacity = 0.03 * (1 - progress * 0.5);
+            }
+
+            // PHASE 1: Charging (0-30% scroll) — rooster starts visible and rushes at you
+            if (progress < 0.3) {
+                const p = progress / 0.3; // 0 to 1 within this phase
+                const scale = 0.7 + p * 2.8; // 0.7 → 3.5
+                // Bob effect (running feet hitting ground) — faster, more intense
+                const bob = Math.sin(p * Math.PI * 8) * (3 + p * 15);
+                heroRooster.style.transform = `translate(-50%, calc(-50% + ${bob}px)) scale(${scale})`;
+                heroRooster.style.opacity = 0.12 + p * 0.35; // 0.12 → 0.47
+                heroRooster.style.display = 'block';
+                // Motion lines ramp up quickly
+                motionLinesContainer.style.opacity = p * 0.7;
+                motionLines.forEach((line, i) => {
+                    line.style.opacity = p * 0.6;
+                    line.style.height = (60 + p * 250 + Math.sin(i) * 50) + 'px';
+                });
+                hasShattered = false;
+            }
+            // PHASE 2: IMPACT (30-45% scroll) — smash + shatter
+            else if (progress < 0.45) {
+                const p = (progress - 0.3) / 0.15;
+                if (!hasShattered && p > 0.3) {
+                    // TRIGGER SHATTER
+                    hasShattered = true;
+                    heroRooster.style.display = 'none';
+                    motionLinesContainer.style.opacity = 0;
+
+                    // Flash
+                    redFlash.classList.add('active');
+                    setTimeout(() => redFlash.classList.remove('active'), 150);
+
+                    // Shake
+                    document.body.classList.add('screen-shake');
+                    setTimeout(() => document.body.classList.remove('screen-shake'), 300);
+
+                    // Scatter fragments from center
+                    const cx = window.innerWidth / 2;
+                    const cy = window.innerHeight / 2;
+                    fragments.forEach((frag, i) => {
+                        frag.style.left = cx + 'px';
+                        frag.style.top = cy + 'px';
+                        frag.style.opacity = 1;
+                        frag.style.transition = `all ${0.5 + Math.random() * 0.7}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+                        setTimeout(() => {
+                            const vx = parseFloat(frag.dataset.vx);
+                            const vy = parseFloat(frag.dataset.vy);
+                            const rot = parseFloat(frag.dataset.rotation);
+                            const dist = 200 + Math.random() * 600;
+                            frag.style.left = (cx + vx * dist) + 'px';
+                            frag.style.top = (cy + vy * dist) + 'px';
+                            frag.style.transform = `rotate(${rot}deg)`;
+                            frag.style.opacity = 0;
+                        }, 5 + i * 3);
+                    });
+                } else if (!hasShattered) {
+                    // Pre-impact: rooster at max scale, last frames before crash
+                    heroRooster.style.transform = `translate(-50%, -50%) scale(${3.5 + p * 1.5})`;
+                    heroRooster.style.opacity = 0.47 + p * 0.15;
+                    heroRooster.style.display = 'block';
+                    motionLinesContainer.style.opacity = 0.7 - p * 0.4;
+                }
+            }
+            // PHASE 3: Post-shatter (45-100%) — clean slate
+            else {
+                heroRooster.style.display = 'none';
+                motionLinesContainer.style.opacity = 0;
+            }
+
+            // Reset when scrolling back to top
+            if (progress < 0.05 && hasShattered) {
+                hasShattered = false;
+                heroRooster.style.transform = 'translate(-50%, -50%) scale(0.7)';
+                heroRooster.style.opacity = 0.12;
+                heroRooster.style.display = 'block';
+                fragments.forEach(frag => {
+                    frag.style.transition = 'none';
+                    frag.style.opacity = 0;
+                });
             }
         });
 
