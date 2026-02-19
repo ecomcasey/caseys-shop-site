@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Service Areas | Enterprise Starlink & Connectivity Solutions Nationwide | 2pifi</title>
+    <meta name="description" content="2pifi delivers enterprise Starlink, fixed wireless, and dedicated internet solutions across 20+ major U.S. metros. Fully-managed deployment with 99.9% uptime. Find your city.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            overflow-x: hidden;
+            background: #0d1b2a;
+        }
+
+        /* ===== TOP NAVIGATION BAR ===== */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(107, 166, 73, 0.2);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-logo-icon {
+            width: 36px;
+            height: 36px;
+            border: 2px solid #6BA649;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6BA649;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid #6BA649;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .nav-phone:hover {
+            background: rgba(107, 166, 73, 0.15);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 140px 2rem 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-breadcrumb {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero-breadcrumb a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+        }
+
+        .hero-breadcrumb a:hover {
+            color: #6BA649;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .green {
+            color: #6BA649;
+        }
+
+        .hero-intro {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+        /* ===== IMAGE BANNER ===== */
+        .image-banner {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .image-banner-item {
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-banner-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-banner-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-banner-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            max-width: 1200px;
+            margin: 0 auto 3.5rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #6BA649;
+            white-space: nowrap;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== SERVICES OVERVIEW ===== */
+        .services-overview {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .services-overview h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+
+        .services-overview h2 .green {
+            color: #6BA649;
+        }
+
+        .services-overview > p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .services-mini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .service-mini-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(107, 166, 73, 0.15);
+            border-left: 3px solid #6BA649;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .service-mini-card:hover {
+            background: rgba(255,255,255,0.07);
+        }
+
+        .service-mini-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(107, 166, 73, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6BA649;
+            font-size: 1.25rem;
+        }
+
+        .service-mini-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .service-mini-card p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
+        /* ===== CITY GRID SECTION ===== */
+        .city-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .city-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            line-height: 1.25;
+        }
+
+        .city-section h2 .green {
+            color: #6BA649;
+        }
+
+        .city-section > p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-bottom: 2.5rem;
+        }
+
+        .city-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .city-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(107, 166, 73, 0.15);
+            border-radius: 14px;
+            padding: 1.75rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .city-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(107, 166, 73, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .city-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .city-card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .city-card h3 .state {
+            color: #6BA649;
+        }
+
+        .city-card-badge {
+            flex-shrink: 0;
+            padding: 0.2rem 0.6rem;
+            background: rgba(107, 166, 73, 0.15);
+            border: 1px solid rgba(107, 166, 73, 0.3);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #6BA649;
+            white-space: nowrap;
+        }
+
+        .city-card-industries {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .city-card-nearby {
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .city-card-nearby-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0.5rem;
+        }
+
+        .city-card-nearby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .nearby-chip {
+            padding: 0.2rem 0.6rem;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .city-card-arrow {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6BA649;
+        }
+
+        /* ===== BOTTOM CTA ===== */
+        .bottom-cta {
+            background: linear-gradient(180deg, #0d1b2a 0%, #142a3f 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(107, 166, 73, 0.15);
+        }
+
+        .bottom-cta h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #6BA649;
+        }
+
+        .bottom-cta p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .bottom-cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            background: linear-gradient(135deg, #6BA649, #5a8e3d);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 166, 73, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #6BA649;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .city-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .image-banner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .image-banner-item:nth-child(3),
+            .image-banner-item:nth-child(4) {
+                display: none;
+            }
+
+            .services-mini-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 110px 1.25rem 40px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .image-banner {
+                grid-template-columns: 1fr;
+                padding: 0 1.25rem;
+            }
+
+            .image-banner-item:nth-child(2),
+            .image-banner-item:nth-child(3),
+            .image-banner-item:nth-child(4) {
+                display: none;
+            }
+
+            .city-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .city-section,
+            .services-overview {
+                padding: 0 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="top-nav">
+        <a href="https://2pifi.com" class="nav-logo">
+            <div class="nav-logo-icon">&pi;</div>
+            <span class="nav-logo-text">2pifi</span>
+        </a>
+        <div class="nav-links">
+            <a href="https://2pifi.com">Home</a>
+            <a href="#services">Services</a>
+            <a href="#cities">Cities</a>
+            <a href="https://www.caseys.shop/2pifi-sales-offer-page">Get Started</a>
+        </div>
+        <a href="tel:+15552pifi00" class="nav-phone">&#9742; (555) 2PI-FI00</a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-breadcrumb">
+            <a href="https://2pifi.com">Home</a> / Service Areas
+        </div>
+        <h1>Enterprise Starlink &amp; Connectivity <span class="green">Service Areas</span></h1>
+        <p class="hero-intro">2pifi delivers fully-managed enterprise Starlink, fixed wireless, and dedicated internet deployments to businesses across the United States. From desert data centers in Las Vegas to remote oil operations in Alaska, we provide reliable connectivity where traditional providers fall short — with zero payment until your site is verified operational.</p>
+    </section>
+
+    <!-- ===== IMAGE BANNER ===== -->
+    <div class="image-banner">
+        <div class="image-banner-item">
+            <img src="https://2pifi.com/wp-content/uploads/2025/11/Starlink_Rural_Location_02e-scaled.jpg" alt="Enterprise Starlink dish deployment on commercial rooftop">
+            <div class="image-banner-label">Starlink Deploy</div>
+        </div>
+        <div class="image-banner-item">
+            <img src="https://2pifi.com/wp-content/uploads/2025/12/business-broadband.jpg" alt="Fixed wireless broadband tower serving businesses">
+            <div class="image-banner-label">Fixed Wireless</div>
+        </div>
+        <div class="image-banner-item">
+            <img src="https://2pifi.com/wp-content/uploads/2025/11/qtq80-LsgHZC.jpeg" alt="Enterprise network infrastructure and dedicated internet access">
+            <div class="image-banner-label">Enterprise Network</div>
+        </div>
+        <div class="image-banner-item">
+            <img src="https://2pifi.com/wp-content/uploads/2025/11/Starlink_Buisness_02a.jpg" alt="Starlink business enterprise installation">
+            <div class="image-banner-label">Business Install</div>
+        </div>
+    </div>
+
+    <!-- ===== STATS BAR ===== -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">Sites Deployed Nationally</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Major Metro Areas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Avg. Uptime</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50</div>
+            <div class="stat-label">States Covered</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">$0</div>
+            <div class="stat-label">Upfront Until Operational</div>
+        </div>
+    </div>
+
+    <!-- ===== SERVICES OVERVIEW ===== -->
+    <section id="services" class="services-overview">
+        <h2>Enterprise Connectivity Solutions <span class="green">Nationwide</span></h2>
+        <p>Wherever your business operates, 2pifi delivers turnkey connectivity solutions — fully managed from procurement through installation, monitoring, and support. Every deployment includes public static IPv4 addresses, 24/7 priority support, and our management portal at no extra cost.</p>
+
+        <div class="services-mini-grid">
+            <div class="service-mini-card">
+                <div class="service-mini-icon">&#128752;</div>
+                <div>
+                    <h4>Enterprise Starlink Deployment</h4>
+                    <p>Business-class Starlink with static IPs, no sold-out area restrictions, and seamless integration with your existing network architecture.</p>
+                </div>
+            </div>
+            <div class="service-mini-card">
+                <div class="service-mini-icon">&#128225;</div>
+                <div>
+                    <h4>Fixed Wireless Broadband</h4>
+                    <p>Aggregating 800+ wireless ISPs nationwide for reliable broadband without fiber dependency. Turnkey hardware, surveys, and optimization.</p>
+                </div>
+            </div>
+            <div class="service-mini-card">
+                <div class="service-mini-icon">&#128274;</div>
+                <div>
+                    <h4>Dedicated Internet Access (DIA)</h4>
+                    <p>Enterprise-grade point-to-point wireless, fiber, and layer 2 transport with guaranteed bandwidth and SLA-backed performance.</p>
+                </div>
+            </div>
+            <div class="service-mini-card">
+                <div class="service-mini-icon">&#128640;</div>
+                <div>
+                    <h4>Redundant WAN &amp; Failover</h4>
+                    <p>Deploy Starlink enterprise as your secondary WAN with automatic failover. Compliance-grade redundancy without MPLS complexity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CITY GRID ===== -->
+    <section id="cities" class="city-section">
+        <h2>Find Enterprise Connectivity in <span class="green">Your City</span></h2>
+        <p>Select your metro area below to learn about enterprise Starlink, fixed wireless, and dedicated internet solutions available in your region. Each location page includes local deployment details, industries served, and a free site assessment.</p>
+
+        <div class="city-grid">
+
+            <!-- AK — Anchorage -->
+            <a href="/2pifi-service-areas/anchorage-ak/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Anchorage, <span class="state">AK</span></h3>
+                </div>
+                <div class="city-card-industries">Oil &amp; Gas &bull; Fishing &amp; Seafood &bull; Military &bull; Mining &bull; Aviation</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Eagle River</span>
+                        <span class="nearby-chip">Wasilla</span>
+                        <span class="nearby-chip">Palmer</span>
+                        <span class="nearby-chip">Kenai</span>
+                        <span class="nearby-chip">Kodiak</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Anchorage &rarr;</div>
+            </a>
+
+            <!-- AZ — Phoenix -->
+            <a href="/2pifi-service-areas/phoenix-az/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Phoenix, <span class="state">AZ</span></h3>
+                </div>
+                <div class="city-card-industries">Semiconductor Mfg &bull; Aerospace &bull; Healthcare &bull; Solar &bull; Real Estate Development</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Scottsdale</span>
+                        <span class="nearby-chip">Tempe</span>
+                        <span class="nearby-chip">Mesa</span>
+                        <span class="nearby-chip">Chandler</span>
+                        <span class="nearby-chip">Gilbert</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Phoenix &rarr;</div>
+            </a>
+
+            <!-- AZ — Tucson -->
+            <a href="/2pifi-service-areas/tucson-az/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Tucson, <span class="state">AZ</span></h3>
+                </div>
+                <div class="city-card-industries">Aerospace &amp; Defense &bull; Mining &bull; Solar Energy &bull; Optics &bull; Healthcare</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Marana</span>
+                        <span class="nearby-chip">Oro Valley</span>
+                        <span class="nearby-chip">Sahuarita</span>
+                        <span class="nearby-chip">Green Valley</span>
+                        <span class="nearby-chip">Sierra Vista</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Tucson &rarr;</div>
+            </a>
+
+            <!-- CA — Fresno -->
+            <a href="/2pifi-service-areas/fresno-ca/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Fresno, <span class="state">CA</span></h3>
+                </div>
+                <div class="city-card-industries">Agriculture &bull; Food Processing &bull; Logistics &bull; Healthcare &bull; Education</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Clovis</span>
+                        <span class="nearby-chip">Madera</span>
+                        <span class="nearby-chip">Visalia</span>
+                        <span class="nearby-chip">Tulare</span>
+                        <span class="nearby-chip">Hanford</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Fresno &rarr;</div>
+            </a>
+
+            <!-- CA — Los Angeles -->
+            <a href="/2pifi-service-areas/los-angeles-ca/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Los Angeles, <span class="state">CA</span></h3>
+                </div>
+                <div class="city-card-industries">Entertainment &bull; Aerospace &bull; Port Logistics &bull; Tech &bull; Manufacturing</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Long Beach</span>
+                        <span class="nearby-chip">Pasadena</span>
+                        <span class="nearby-chip">Santa Monica</span>
+                        <span class="nearby-chip">Burbank</span>
+                        <span class="nearby-chip">Glendale</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Los Angeles &rarr;</div>
+            </a>
+
+            <!-- CA — Sacramento -->
+            <a href="/2pifi-service-areas/sacramento-ca/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Sacramento, <span class="state">CA</span></h3>
+                </div>
+                <div class="city-card-industries">Government &bull; Agriculture &bull; Healthcare &bull; Food Processing &bull; Clean Energy</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Elk Grove</span>
+                        <span class="nearby-chip">Roseville</span>
+                        <span class="nearby-chip">Folsom</span>
+                        <span class="nearby-chip">Davis</span>
+                        <span class="nearby-chip">Rancho Cordova</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Sacramento &rarr;</div>
+            </a>
+
+            <!-- CA — San Diego -->
+            <a href="/2pifi-service-areas/san-diego-ca/" class="city-card">
+                <div class="city-card-header">
+                    <h3>San Diego, <span class="state">CA</span></h3>
+                </div>
+                <div class="city-card-industries">Defense &amp; Military &bull; Biotech &bull; Telecom &bull; Tourism &bull; Port Logistics</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Chula Vista</span>
+                        <span class="nearby-chip">Oceanside</span>
+                        <span class="nearby-chip">Carlsbad</span>
+                        <span class="nearby-chip">Escondido</span>
+                        <span class="nearby-chip">Coronado</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View San Diego &rarr;</div>
+            </a>
+
+            <!-- CA — San Jose -->
+            <a href="/2pifi-service-areas/san-jose-ca/" class="city-card">
+                <div class="city-card-header">
+                    <h3>San Jose, <span class="state">CA</span></h3>
+                </div>
+                <div class="city-card-industries">Tech &amp; Semiconductor &bull; Biotech &bull; Clean Energy &bull; Advanced Manufacturing</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Santa Clara</span>
+                        <span class="nearby-chip">Sunnyvale</span>
+                        <span class="nearby-chip">Cupertino</span>
+                        <span class="nearby-chip">Mountain View</span>
+                        <span class="nearby-chip">Palo Alto</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View San Jose &rarr;</div>
+            </a>
+
+            <!-- CA — Stockton -->
+            <a href="/2pifi-service-areas/stockton-ca/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Stockton, <span class="state">CA</span></h3>
+                </div>
+                <div class="city-card-industries">Agriculture &bull; Logistics &amp; Warehousing &bull; Port Operations &bull; Food Processing</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Lodi</span>
+                        <span class="nearby-chip">Tracy</span>
+                        <span class="nearby-chip">Manteca</span>
+                        <span class="nearby-chip">Lathrop</span>
+                        <span class="nearby-chip">Modesto</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Stockton &rarr;</div>
+            </a>
+
+            <!-- CO — Denver -->
+            <a href="/2pifi-service-areas/denver-co/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Denver, <span class="state">CO</span></h3>
+                </div>
+                <div class="city-card-industries">Aerospace &bull; Energy (Oil &amp; Gas) &bull; Tech &bull; Healthcare &bull; Cannabis &bull; Logistics</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Aurora</span>
+                        <span class="nearby-chip">Boulder</span>
+                        <span class="nearby-chip">Lakewood</span>
+                        <span class="nearby-chip">Westminster</span>
+                        <span class="nearby-chip">Castle Rock</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Denver &rarr;</div>
+            </a>
+
+            <!-- FL — Orlando -->
+            <a href="/2pifi-service-areas/orlando-fl/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Orlando, <span class="state">FL</span></h3>
+                </div>
+                <div class="city-card-industries">Tourism &amp; Hospitality &bull; Aerospace &bull; Healthcare &bull; Tech &bull; Construction</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Kissimmee</span>
+                        <span class="nearby-chip">Sanford</span>
+                        <span class="nearby-chip">Winter Park</span>
+                        <span class="nearby-chip">Lake Mary</span>
+                        <span class="nearby-chip">Clermont</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Orlando &rarr;</div>
+            </a>
+
+            <!-- IA — Cedar Rapids -->
+            <a href="/2pifi-service-areas/cedar-rapids-ia/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Cedar Rapids, <span class="state">IA</span></h3>
+                </div>
+                <div class="city-card-industries">Manufacturing &bull; Food Processing &bull; Aerospace &bull; Financial Services &bull; Logistics</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Marion</span>
+                        <span class="nearby-chip">Iowa City</span>
+                        <span class="nearby-chip">Hiawatha</span>
+                        <span class="nearby-chip">Coralville</span>
+                        <span class="nearby-chip">Waterloo</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Cedar Rapids &rarr;</div>
+            </a>
+
+            <!-- MO — Kansas City -->
+            <a href="/2pifi-service-areas/kansas-city-mo/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Kansas City, <span class="state">MO</span></h3>
+                </div>
+                <div class="city-card-industries">Logistics &bull; Agriculture &bull; Automotive &bull; Healthcare &bull; Financial Services</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Overland Park</span>
+                        <span class="nearby-chip">Olathe</span>
+                        <span class="nearby-chip">Lee's Summit</span>
+                        <span class="nearby-chip">Independence</span>
+                        <span class="nearby-chip">Lenexa</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Kansas City &rarr;</div>
+            </a>
+
+            <!-- NV — Las Vegas -->
+            <a href="/2pifi-service-areas/las-vegas-nv/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Las Vegas, <span class="state">NV</span></h3>
+                </div>
+                <div class="city-card-industries">Gaming &amp; Hospitality &bull; Data Centers &bull; Solar Energy &bull; Construction &bull; Logistics</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Henderson</span>
+                        <span class="nearby-chip">North Las Vegas</span>
+                        <span class="nearby-chip">Boulder City</span>
+                        <span class="nearby-chip">Summerlin</span>
+                        <span class="nearby-chip">Mesquite</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Las Vegas &rarr;</div>
+            </a>
+
+            <!-- OH — Columbus -->
+            <a href="/2pifi-service-areas/columbus-oh/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Columbus, <span class="state">OH</span></h3>
+                </div>
+                <div class="city-card-industries">Tech &bull; Insurance &bull; Logistics &bull; Healthcare &bull; Data Centers &bull; Manufacturing</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Dublin</span>
+                        <span class="nearby-chip">Westerville</span>
+                        <span class="nearby-chip">New Albany</span>
+                        <span class="nearby-chip">Hilliard</span>
+                        <span class="nearby-chip">Marysville</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Columbus &rarr;</div>
+            </a>
+
+            <!-- OK — Oklahoma City -->
+            <a href="/2pifi-service-areas/oklahoma-city-ok/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Oklahoma City, <span class="state">OK</span></h3>
+                </div>
+                <div class="city-card-industries">Energy (Oil &amp; Gas) &bull; Aerospace &bull; Agriculture &bull; Healthcare &bull; Bioscience</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Norman</span>
+                        <span class="nearby-chip">Edmond</span>
+                        <span class="nearby-chip">Moore</span>
+                        <span class="nearby-chip">Midwest City</span>
+                        <span class="nearby-chip">Stillwater</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Oklahoma City &rarr;</div>
+            </a>
+
+            <!-- OR — Portland -->
+            <a href="/2pifi-service-areas/portland-or/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Portland, <span class="state">OR</span></h3>
+                </div>
+                <div class="city-card-industries">Tech (Silicon Forest) &bull; Manufacturing &bull; Clean Energy &bull; Forestry &bull; Healthcare</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Beaverton</span>
+                        <span class="nearby-chip">Hillsboro</span>
+                        <span class="nearby-chip">Gresham</span>
+                        <span class="nearby-chip">Lake Oswego</span>
+                        <span class="nearby-chip">Vancouver WA</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Portland &rarr;</div>
+            </a>
+
+            <!-- TX — Dallas -->
+            <a href="/2pifi-service-areas/dallas-tx/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Dallas, <span class="state">TX</span></h3>
+                </div>
+                <div class="city-card-industries">Tech &amp; Telecom &bull; Financial Services &bull; Logistics &bull; Aerospace &bull; Healthcare</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Fort Worth</span>
+                        <span class="nearby-chip">Plano</span>
+                        <span class="nearby-chip">Irving</span>
+                        <span class="nearby-chip">Frisco</span>
+                        <span class="nearby-chip">Arlington</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Dallas &rarr;</div>
+            </a>
+
+            <!-- TX — Houston -->
+            <a href="/2pifi-service-areas/houston-tx/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Houston, <span class="state">TX</span></h3>
+                </div>
+                <div class="city-card-industries">Oil &amp; Gas &bull; Petrochemical &bull; Healthcare &bull; Aerospace (NASA) &bull; Shipping</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Sugar Land</span>
+                        <span class="nearby-chip">The Woodlands</span>
+                        <span class="nearby-chip">Katy</span>
+                        <span class="nearby-chip">Pearland</span>
+                        <span class="nearby-chip">Pasadena</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Houston &rarr;</div>
+            </a>
+
+            <!-- UT — Salt Lake City -->
+            <a href="/2pifi-service-areas/salt-lake-city-ut/" class="city-card">
+                <div class="city-card-header">
+                    <h3>Salt Lake City, <span class="state">UT</span></h3>
+                </div>
+                <div class="city-card-industries">Tech (Silicon Slopes) &bull; Aerospace &bull; Mining &bull; Healthcare &bull; Outdoor Recreation</div>
+                <div class="city-card-nearby">
+                    <div class="city-card-nearby-label">Also Serving</div>
+                    <div class="city-card-nearby-list">
+                        <span class="nearby-chip">Provo</span>
+                        <span class="nearby-chip">Ogden</span>
+                        <span class="nearby-chip">Lehi</span>
+                        <span class="nearby-chip">Sandy</span>
+                        <span class="nearby-chip">Park City</span>
+                    </div>
+                </div>
+                <div class="city-card-arrow">View Salt Lake City &rarr;</div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section class="bottom-cta">
+        <h2>Don't See Your City? We're Nationwide.</h2>
+        <p>2pifi deploys enterprise Starlink and connectivity solutions across all 50 states, Puerto Rico, USVI, and parts of Canada. Contact us for a free site assessment — anywhere.</p>
+        <div class="bottom-cta-actions">
+            <a href="https://www.caseys.shop/2pifi-sales-offer-page" class="btn-primary">Request Free Assessment</a>
+            <a href="tel:+15552pifi00" class="btn-secondary">&#9742; (555) 2PI-FI00</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>&copy; 2026 2pifi, Inc. Enterprise Starlink &amp; Connectivity Solutions. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://2pifi.com">2pifi.com</a> &bull;
+            <a href="#">Privacy Policy</a> &bull;
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+
+</body>
+</html>
