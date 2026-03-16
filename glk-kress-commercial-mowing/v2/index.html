@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLK Turf Solutions — Kress Voyager Commercial Mowing | TX & OK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-dark: #2D5016;
+            --green-mid: #3A6B1E;
+            --green-light: #E8F0E4;
+            --green-accent: #5FA03B;
+            --gray-50: #F8F9FA;
+            --gray-100: #F0F1F3;
+            --gray-200: #DDE0E4;
+            --gray-500: #6B7280;
+            --gray-700: #374151;
+            --gray-900: #1A1A1A;
+            --dark-bg: #0F1A0A;
+            --white: #FFFFFF;
+            --orange-promo: #E8740C;
+            --orange-light: #FFF4E6;
+            --max-w: 1200px;
+            --section-pad: 80px 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+        }
+
+        /* PROMO BAR */
+        .promo-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--orange-promo);
+            color: var(--white);
+            padding: 12px 24px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 101;
+            letter-spacing: 0.5px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 100;
+            padding: 16px 24px;
+        }
+
+        nav .nav-container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--green-dark);
+            text-decoration: none;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--green-dark);
+        }
+
+        .btn-quote {
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-quote:hover {
+            background: var(--green-mid);
+        }
+
+        /* MAIN CONTENT */
+        main {
+            padding-top: 160px;
+        }
+
+        section {
+            padding: var(--section-pad);
+        }
+
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            margin: 24px 0 12px 0;
+            color: var(--gray-900);
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 40px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 28px;
+            line-height: 1.3;
+        }
+
+        h4 {
+            font-size: 22px;
+        }
+
+        p {
+            margin: 12px 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-700);
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--green-accent);
+            margin-bottom: 12px;
+        }
+
+        /* BUTTONS */
+        .btn-primary {
+            display: inline-block;
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--green-mid);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--green-dark);
+            padding: 14px 32px;
+            border: 2px solid var(--green-dark);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--green-light);
+            border-color: var(--green-dark);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* HERO SECTION */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            margin-top: 0;
+        }
+
+        .hero-content .subtitle {
+            font-size: 20px;
+            line-height: 1.5;
+            color: var(--gray-700);
+            margin: 16px 0 24px 0;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--green-dark);
+            padding: 8px 12px;
+            background: var(--green-light);
+            border-radius: 6px;
+        }
+
+        .hero-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* PARTNER LOGOS */
+        .partner-logos {
+            background: var(--gray-50);
+            padding: 40px 24px;
+        }
+
+        .partner-logos .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .partner-logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo img {
+            max-height: 50px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        /* PROBLEM SECTION */
+        .problem-section {
+            background: var(--white);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .problem-card {
+            background: var(--gray-50);
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange-promo);
+        }
+
+        .problem-card h4 {
+            color: var(--gray-900);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: var(--gray-700);
+        }
+
+        /* PROOF BANNER */
+        .proof-banner {
+            background: linear-gradient(135deg, rgba(15,26,10,0.75), rgba(45,80,22,0.75)), url('../kress-images/soccer-field-stripes.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 24px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .proof-banner h2 {
+            color: var(--white);
+            font-size: 44px;
+            margin: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* VOYAGER HERO */
+        .voyager-hero-section {
+            background: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .voyager-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .voyager-hero-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .voyager-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .voyager-hero-content h2 {
+            color: var(--white);
+            margin-top: 0;
+        }
+
+        .voyager-hero-content p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            margin: 16px 0;
+        }
+
+        .spec-highlight {
+            background: rgba(95,160,59,0.2);
+            border-left: 4px solid var(--green-accent);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .spec-highlight strong {
+            color: var(--green-accent);
+        }
+
+        /* ADVANTAGE SECTION */
+        .advantage-section {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .advantage-section h2 {
+            margin-bottom: 12px;
+        }
+
+        .advantage-subtitle {
+            font-size: 20px;
+            color: var(--green-accent);
+            font-weight: 600;
+            margin: 8px 0 32px 0;
+        }
+
+        .advantage-text {
+            max-width: 700px;
+            margin: 24px auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray-700);
+        }
+
+        .advantage-image {
+            margin-top: 48px;
+            border-radius: 16px;
+            overflow: hidden;
+            max-height: 500px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .advantage-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ROI SECTION */
+        .roi-section {
+            background: var(--gray-50);
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .roi-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .roi-card h4 {
+            color: var(--green-dark);
+            margin-bottom: 20px;
+        }
+
+        .roi-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 15px;
+        }
+
+        .roi-line:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .roi-summary {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+            color: var(--white);
+            padding: 48px;
+            border-radius: 12px;
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .roi-summary-block {
+            text-align: center;
+        }
+
+        .roi-summary-divider {
+            width: 2px;
+            height: 80px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .roi-summary h3 {
+            color: var(--white);
+            margin-top: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        .roi-stat {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 8px 0;
+            color: var(--white);
+        }
+
+        .roi-summary p {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            margin: 8px 0 0 0;
+        }
+
+        /* SPLIT SECTIONS */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .split-grid.reverse {
+            direction: rtl;
+        }
+
+        .split-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .split-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .split-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .split-content h3 {
+            margin-top: 0;
+        }
+
+        /* SERVICE LIFE CARD */
+        .service-life-card {
+            background: linear-gradient(135deg, var(--dark-bg), #1a2e12);
+            color: var(--white);
+            padding: 64px 48px;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid var(--green-accent);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .service-life-card h3 {
+            color: var(--white);
+            margin-top: 0;
+            font-size: 36px;
+        }
+
+        .service-life-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 16px auto;
+        }
+
+        .service-life-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 32px 0;
+        }
+
+        .service-life-stat {
+            text-align: center;
+        }
+
+        .service-life-stat .number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--green-accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .service-life-stat .label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            display: block;
+        }
+
+        .warranty-badge {
+            display: inline-block;
+            background: var(--green-accent);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 24px;
+            font-weight: 700;
+            margin-top: 24px;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+
+        /* SAFETY SECTION */
+        .safety-section {
+            background: var(--gray-50);
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .safety-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            border-top: 4px solid var(--green-accent);
+        }
+
+        .safety-card h4 {
+            color: var(--green-dark);
+        }
+
+        /* BATTERY SECTION */
+        .battery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .battery-content h3 {
+            margin-top: 0;
+        }
+
+        .battery-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .battery-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* APP SECTION */
+        .app-section {
+            background: linear-gradient(135deg, var(--green-light), rgba(232,240,228,0.5));
+            text-align: center;
+        }
+
+        .app-section h3 {
+            margin-top: 0;
+        }
+
+        /* EQUIPMENT PROTECTION */
+        .equipment-protection {
+            background: linear-gradient(135deg, rgba(15,26,10,0.8), rgba(45,80,22,0.8)), url('../kress-images/overhead-stripes.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 24px;
+            border-radius: 12px;
+        }
+
+        .equipment-protection h3 {
+            color: var(--white);
+            margin-top: 0;
+        }
+
+        .equipment-protection p {
+            color: rgba(255,255,255,0.95);
+            font-size: 18px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* LINEUP SECTION */
+        .lineup-section {
+            background: var(--gray-50);
+            text-align: center;
+        }
+
+        .lineup-section h2 {
+            margin-bottom: 8px;
+        }
+
+        .lineup-subtitle {
+            font-size: 18px;
+            color: var(--gray-700);
+            margin: 0 0 40px 0;
+        }
+
+        .lineup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .lineup-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .lineup-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .lineup-card-image {
+            height: 220px;
+            overflow: hidden;
+            background: var(--gray-100);
+        }
+
+        .lineup-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lineup-card-content {
+            padding: 24px;
+            text-align: left;
+        }
+
+        .lineup-card h4 {
+            color: var(--green-dark);
+            margin: 0 0 12px 0;
+        }
+
+        .lineup-card p {
+            font-size: 14px;
+            color: var(--gray-700);
+            margin: 0;
+        }
+
+        /* CREW IN ACTION */
+        .crew-section {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .crew-section h3 {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .crew-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .crew-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .crew-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .crew-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            padding: 24px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* SPECS TABLE */
+        .specs-section {
+            background: var(--gray-50);
+            text-align: center;
+        }
+
+        .specs-section h3 {
+            margin-top: 0;
+        }
+
+        .specs-table {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .specs-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table th {
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .specs-table td {
+            padding: 16px;
+            border: 1px solid var(--gray-200);
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .specs-table tr:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .specs-table tr:hover {
+            background: var(--green-light);
+        }
+
+        /* GET STARTED SECTION */
+        .get-started {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .get-started h2 {
+            margin-top: 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            background: var(--gray-50);
+            padding: 32px;
+            border-radius: 12px;
+            border-top: 4px solid var(--green-accent);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background: var(--green-dark);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .process-step h4 {
+            color: var(--green-dark);
+            margin: 12px 0;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            margin: 12px 0 0 0;
+        }
+
+        /* SERVICE AREAS */
+        .service-areas {
+            background: var(--gray-50);
+            text-align: center;
+        }
+
+        .service-areas h2 {
+            margin-top: 0;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .area-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--green-accent);
+            text-align: left;
+        }
+
+        .area-card h4 {
+            color: var(--green-dark);
+            margin-top: 0;
+        }
+
+        .area-card p {
+            font-size: 15px;
+            color: var(--gray-700);
+            margin: 12px 0;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-top: 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--gray-50);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin: 0 0 16px 0;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--green-dark);
+            font-size: 14px;
+        }
+
+        .testimonial-title {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(135deg, rgba(15,26,10,0.85), rgba(45,80,22,0.85)), url('../kress-images/overhead-stripes.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 24px;
+            border-radius: 0;
+        }
+
+        .final-cta h2 {
+            color: var(--white);
+            margin-top: 0;
+            font-size: 44px;
+        }
+
+        .final-cta .subtitle {
+            color: rgba(255,255,255,0.95);
+            font-size: 20px;
+            margin: 12px 0 32px 0;
+        }
+
+        .final-cta .btn-group {
+            justify-content: center;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        footer .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .footer-col a:hover {
+            color: var(--green-accent);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-badge {
+            display: inline-block;
+            background: var(--green-accent);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            nav .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .split-grid,
+            .battery-grid,
+            .voyager-hero-grid,
+            .areas-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .split-grid.reverse {
+                direction: ltr;
+            }
+
+            .roi-summary {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .roi-summary-divider {
+                width: 80px;
+                height: 2px;
+                margin: 0 auto;
+            }
+
+            .service-life-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .roi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid,
+            .testimonial-grid,
+            .lineup-grid,
+            .crew-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-banner h2,
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .hero-image,
+            .split-image,
+            .battery-image,
+            .advantage-image,
+            .voyager-hero-image {
+                max-height: 400px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PROMO BAR -->
+    <div class="promo-bar">
+        NOW AVAILABLE IN TEXAS & OKLAHOMA — GLK Turf Solutions is your certified Kress dealer. Call (XXX) XXX-XXXX
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">GLK Turf Solutions</a>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#why">Why GLK</a></li>
+                <li><a href="#roi">ROI</a></li>
+                <li><a href="#service">Service Areas</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="btn-quote">Get a Quote</button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" style="background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 50%, var(--green-light) 100%);">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>The Future of Commercial Mowing Is Autonomous</h1>
+                    <p class="subtitle">GLK Turf Solutions brings the Kress Voyager KR800E to Texas & Oklahoma. Same staff. Twice the lawns. Higher margins.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn-primary">Get a Quote</a>
+                        <a href="#products" class="btn-secondary">See the Voyager</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="badge">✓ Certified Kress Dealer</div>
+                        <div class="badge">✓ TX & OK Coverage</div>
+                        <div class="badge">✓ Financing Available</div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../kress-images/hero-voyager.png" alt="Kress Voyager KR800E autonomous mower">
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNER LOGOS -->
+        <section class="partner-logos">
+            <div class="container">
+                <div class="partner-logo"><img src="../kress-images/kress-logo.png" alt="Kress"></div>
+                <div class="partner-logo"><img src="../kress-images/abiforce-logo.svg" alt="ABI Force"></div>
+                <div class="partner-logo"><img src="../kress-images/imants-logo.png" alt="Imants"></div>
+                <div class="partner-logo"><img src="../kress-images/trimax-logo.png" alt="Trimax"></div>
+                <div class="partner-logo"><img src="../kress-images/abovepartech-logo.png" alt="Above Par Tech"></div>
+                <div class="partner-logo"><img src="../kress-images/vredo-logo.png" alt="Vredo"></div>
+                <div class="partner-logo"><img src="../kress-images/campey-logo.png" alt="Campey"></div>
+            </div>
+        </section>
+
+        <!-- PROBLEM SECTION -->
+        <section class="problem-section">
+            <div class="container">
+                <div class="section-label">THE INDUSTRY PROBLEM</div>
+                <h2>Labor costs are crushing margins. Your best crews keep leaving.</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <h4>Rising Labor Costs</h4>
+                        <p>Crew wages climb year over year. Loaded labor now consumes 60–70% of service revenue.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Crew Turnover</h4>
+                        <p>Outdoor work is hard. Recruiting and training replacements drains time and profit.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Equipment Downtime</h4>
+                        <p>Breakdowns kill productivity. Service calls and repair wait times cost real money.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Noise Complaints</h4>
+                        <p>Early mornings and tight neighborhoods. Restrictions on when and where you can work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROOF BANNER -->
+        <section class="proof-banner">
+            <div class="container">
+                <h2>What if your mower worked while your crew handled everything else?</h2>
+            </div>
+        </section>
+
+        <!-- VOYAGER KR800E HERO -->
+        <section class="voyager-hero-section">
+            <div class="voyager-hero-grid">
+                <div class="voyager-hero-image">
+                    <img src="../kress-images/tile_table.png" alt="Kress Voyager KR800E commercial mower">
+                </div>
+                <div class="voyager-hero-content">
+                    <h2>The Unmanned Era of Mowing Is Here</h2>
+                    <p>Introducing the Kress Voyager KR800E — the world's first autonomous RTK robotic mower engineered for commercial turf management.</p>
+                    <div class="spec-highlight">
+                        <p><strong>40" deck</strong> | <strong>Up to 7 acres per charge</strong> | <strong>5,000-hour service life</strong></p>
+                        <p>RTK navigation | 360° obstacle detection | Field-proven reliability</p>
+                    </div>
+                    <p style="font-size: 18px; margin-top: 24px;"><strong style="color: var(--green-accent);">Price: $59,999</strong></p>
+                    <p style="font-size: 15px; color: rgba(255,255,255,0.8);">Comparable to the annual cost of a mower operator.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn-primary">Request Voyager Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGE SECTION -->
+        <section class="advantage-section">
+            <div class="container">
+                <h2>Your Unfair Advantage</h2>
+                <p class="advantage-subtitle">Same staff. Twice the lawns. Higher margins.</p>
+                <div class="advantage-text">
+                    <p>Voyager turns one two-person mowing crew into two one-person crews. No operator stuck on a zero-turn. Your best staff now edits, trims, and handles upsells while Voyager handles the heaviest, most repetitive work.</p>
+                </div>
+                <div class="advantage-image">
+                    <img src="../kress-images/fleet-aerial-golf.png" alt="Fleet of mowers at golf course aerial view">
+                </div>
+            </div>
+        </section>
+
+        <!-- THE MATH / ROI SECTION -->
+        <section class="roi-section" id="roi">
+            <div class="container">
+                <h2>The Math Is Simple</h2>
+                <div class="roi-grid">
+                    <div class="roi-card">
+                        <h4>Traditional Crew Model</h4>
+                        <div class="roi-line"><span>Crew size</span> <span>2 people</span></div>
+                        <div class="roi-line"><span>Hourly rate (loaded)</span> <span>$45–55</span></div>
+                        <div class="roi-line"><span>Hours per 40 properties</span> <span>40 hrs/week</span></div>
+                        <div class="roi-line"><span>Weekly cost</span> <span>$1,800–2,200</span></div>
+                        <div class="roi-line"><span>Annual cost</span> <span>$93,600–114,400</span></div>
+                    </div>
+                    <div class="roi-card">
+                        <h4>Voyager Model</h4>
+                        <div class="roi-line"><span>Equipment cost</span> <span>$59,999</span></div>
+                        <div class="roi-line"><span>Operator hours</span> <span>0</span></div>
+                        <div class="roi-line"><span>Annual maintenance</span> <span>~$3,000</span></div>
+                        <div class="roi-line"><span>Service life</span> <span>5,000 hours</span></div>
+                        <div class="roi-line"><span>Cost per year (Year 1)</span> <span>~$62,999</span></div>
+                    </div>
+                    <div class="roi-summary">
+                        <div class="roi-summary-block">
+                            <h3>The Result</h3>
+                            <div class="roi-stat">20% Lower Price</div>
+                            <p>Undercut competitors while maintaining healthy margins</p>
+                        </div>
+                        <div class="roi-summary-divider"></div>
+                        <div class="roi-summary-block">
+                            <h3>The Advantage</h3>
+                            <div class="roi-stat">20+ Points More Margin</div>
+                            <p>Plus your crew handles edging, trimming, cleanup, and upsells</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAVELS WITH THE CREW -->
+        <section>
+            <div class="split-grid">
+                <div class="split-image">
+                    <img src="../kress-images/voyager-sports-facility.jpg" alt="Voyager at sports facility">
+                </div>
+                <div class="split-content">
+                    <h3>Travels With the Crew</h3>
+                    <p>Voyager changes everything — except logistics. It loads, transports, and deploys just like a manned zero-turn.</p>
+                    <p>No special equipment. No new trailers. Fits on your existing rig. Crews move between properties in the same rhythm they always did. The only difference: no one is riding the mower.</p>
+                    <p>Set Voyager down, walk the perimeter once, press start, and move to the next job. Your crew handles the rest of the property while Voyager mows.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONE-TIME SMART MAPPING -->
+        <section style="background: var(--gray-50);">
+            <div class="split-grid reverse">
+                <div class="split-image">
+                    <img src="../kress-images/voyager-assets/KR172+KR173+KR174_lifestyle5.jpg" alt="Installing RTK antenna on Voyager">
+                </div>
+                <div class="split-content">
+                    <h3>One-Time Smart Mapping</h3>
+                    <p>Setup is where Voyager breaks the mold. No geo-fencing. No app uploads. No complexity.</p>
+                    <p>Simply ride Voyager along the property perimeter one time. The robot learns the boundary, records the map, and saves it permanently to memory.</p>
+                    <p>From that moment forward, Voyager mows that property autonomously, every week, without human input. RTK navigation keeps it straight. Cameras and LiDAR keep it safe.</p>
+                    <p>One property onboarded in 20 minutes. Your crews spend less time mapping, more time selling and executing additional services.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5000 HOUR SERVICE LIFE -->
+        <section>
+            <div class="container">
+                <div class="service-life-card">
+                    <h3>5,000-Hour Service Life</h3>
+                    <p>Engineered for commercial duty cycles with minimal maintenance demands.</p>
+                    <div class="service-life-stats">
+                        <div class="service-life-stat">
+                            <span class="number">5,000</span>
+                            <span class="label">Operating Hours</span>
+                        </div>
+                        <div class="service-life-stat">
+                            <span class="number">5 yr</span>
+                            <span class="label">Warranty Coverage</span>
+                        </div>
+                        <div class="service-life-stat">
+                            <span class="number">7 ac</span>
+                            <span class="label">Per Charge</span>
+                        </div>
+                    </div>
+                    <div class="warranty-badge">5-Year / 2,000-Hour Warranty (Whichever Comes First)</div>
+                    <p style="margin-top: 20px;">Extended maintenance support available through GLK Turf Solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAFETY & CERTIFICATIONS -->
+        <section class="safety-section">
+            <div class="container">
+                <h2>Multiple Layers of Protection</h2>
+                <p>Voyager is built with redundant safety systems designed for zero-operator environments.</p>
+                <div class="safety-grid">
+                    <div class="safety-card">
+                        <h4>360° Detection</h4>
+                        <p>Cameras, LiDAR, and ultrasonic sensors work redundantly to detect obstacles in every direction, stop the mower, and adjust course in real-time.</p>
+                    </div>
+                    <div class="safety-card">
+                        <h4>ETL CUS Certified</h4>
+                        <p>Dual safety certification under ETL CUS standard ensures compliance across North American commercial operations.</p>
+                    </div>
+                    <div class="safety-card">
+                        <h4>CE Machinery Directive</h4>
+                        <p>Full European machinery safety compliance for global deployments and liability protection.</p>
+                    </div>
+                    <div class="safety-card">
+                        <h4>EN 18031 Cybersecurity</h4>
+                        <p>TÜV SÜD certified RED cybersecurity. RTK data encryption. No remote takeover vulnerability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXTENDED BATTERY PERFORMANCE -->
+        <section>
+            <div class="battery-grid">
+                <div class="battery-content">
+                    <h3>Extended Battery Performance</h3>
+                    <p>Voyager's built-in 10 kWh battery delivers up to 7 hours of continuous operation in optimal conditions — enough to handle most properties without interruption.</p>
+                    <p>Need more? Extend runtime instantly with any Kress CyberPack battery. Swap a fresh pack, resume mowing. No downtime. No complexity.</p>
+                    <p>The entire Kress 60V Commercial lineup shares the same battery ecosystem. Your investment in Voyager unlocks compatibility with every Kress trimmer, blower, edger, and pole saw on the market.</p>
+                </div>
+                <div class="battery-image" style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <img src="../kress-images/cyberpack-battery.jpg" alt="Kress CyberPack battery" style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        </section>
+
+        <!-- KRESS COMMERCIAL APP -->
+        <section class="app-section">
+            <div class="container">
+                <h3>Kress Commercial App Integration</h3>
+                <p>Voyager is connected to the Kress Commercial app for real-time tracking, remote diagnostics, and over-the-air updates. Monitor fleet health, track mowing completion, and receive alerts — all from your phone.</p>
+                <p style="margin-top: 16px; font-size: 15px;">No complex software. No admin overhead. Simple insights. Better decisions.</p>
+            </div>
+        </section>
+
+        <!-- EQUIPMENT THAT PROTECTS WORKERS -->
+        <section class="equipment-protection">
+            <div class="container">
+                <h3>Equipment That Protects Workers — and Keeps Them Longer</h3>
+                <p>Reduced noise, vibration, and exhaust exposure make daily work less punishing. Crews stay longer. Turnover drops. Reputation grows. Voyager isn't just smarter — it's more human.</p>
+            </div>
+        </section>
+
+        <!-- EQUIPMENT LINEUP -->
+        <section class="lineup-section" id="products">
+            <div class="container">
+                <h2>Complete Commercial Electric Lineup</h2>
+                <p class="lineup-subtitle">Every tool your crew needs. One battery platform. Zero emissions.</p>
+                <div class="lineup-grid">
+                    <div class="lineup-card">
+                        <div class="lineup-card-image">
+                            <img src="../kress-images/voyager-assets/KC150_lifestyle2.jpg" alt="Kress string trimmer">
+                        </div>
+                        <div class="lineup-card-content">
+                            <h4>String Trimmer</h4>
+                            <p>Lightweight, quiet, zero-emissions edging and trimming. Reduces crew fatigue.</p>
+                        </div>
+                    </div>
+                    <div class="lineup-card">
+                        <div class="lineup-card-image">
+                            <img src="../kress-images/voyager-assets/+_DSC2577.jpg" alt="Kress edger">
+                        </div>
+                        <div class="lineup-card-content">
+                            <h4>Edger</h4>
+                            <p>Precision pavement edges and hardscape boundaries. Clean, professional results every time.</p>
+                        </div>
+                    </div>
+                    <div class="lineup-card">
+                        <div class="lineup-card-image">
+                            <img src="../kress-images/blower-action.jpg" alt="Kress commercial blower">
+                        </div>
+                        <div class="lineup-card-content">
+                            <h4>Commercial Blower</h4>
+                            <p>Versatile cleanup tool. Leaves, debris, or post-cut tidying. Fast and efficient.</p>
+                        </div>
+                    </div>
+                    <div class="lineup-card">
+                        <div class="lineup-card-image">
+                            <img src="../kress-images/voyager-assets/_DSC2820.jpg" alt="Kress pole saw">
+                        </div>
+                        <div class="lineup-card-content">
+                            <h4>Pole Saw</h4>
+                            <p>Overhead pruning and branch removal without ladder work. Safer for crews.</p>
+                        </div>
+                    </div>
+                    <div class="lineup-card">
+                        <div class="lineup-card-image">
+                            <img src="../kress-images/voyager-assets/KC710.9_lifestyle2.jpg" alt="Kress walk-behind commercial mower">
+                        </div>
+                        <div class="lineup-card-content">
+                            <h4>Walk-Behind Mower</h4>
+                            <p>High-performance, zero-emission alternative for tight spaces and complex landscapes.</p>
+                        </div>
+                    </div>
+                    <div class="lineup-card">
+                        <div class="lineup-card-image">
+                            <img src="../kress-images/voyager-assets/KAC875L+KAC877L_lifestyle2.jpg" alt="Kress CyberTank power station">
+                        </div>
+                        <div class="lineup-card-content">
+                            <h4>CyberTank Power Station</h4>
+                            <p>Multi-battery charging hub. One power source for your entire crew's tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREW IN ACTION -->
+        <section class="crew-section">
+            <div class="container">
+                <h3>See the Full Kress Commercial System in Action</h3>
+                <div class="crew-grid">
+                    <div class="crew-image">
+                        <img src="../kress-images/voyager-assets/+_DSC2449.jpg" alt="Two crew members working on residential property">
+                        <div class="crew-image-overlay">Crew coordination</div>
+                    </div>
+                    <div class="crew-image">
+                        <img src="../kress-images/voyager-assets/_DSC2772.jpg" alt="Crew member using edger on walkway">
+                        <div class="crew-image-overlay">Precision edging</div>
+                    </div>
+                    <div class="crew-image">
+                        <img src="../kress-images/voyager-assets/+_DSC2535.jpg" alt="Crew member string trimming along hedge">
+                        <div class="crew-image-overlay">Line trimming</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECS TABLE -->
+        <section class="specs-section">
+            <div class="container">
+                <h3>Voyager KR800E Specifications</h3>
+                <div class="specs-table">
+                    <table>
+                        <tr>
+                            <th>Specification</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>Navigation System</td>
+                            <td>RTK (Real-Time Kinematic) GNSS</td>
+                        </tr>
+                        <tr>
+                            <td>Deck Width</td>
+                            <td>40 inches</td>
+                        </tr>
+                        <tr>
+                            <td>Cutting Height Range</td>
+                            <td>1.5" to 5.0"</td>
+                        </tr>
+                        <tr>
+                            <td>Battery System</td>
+                            <td>10 kWh / 45V CyberPack Compatible</td>
+                        </tr>
+                        <tr>
+                            <td>Max Speed</td>
+                            <td>5.6 mph</td>
+                        </tr>
+                        <tr>
+                            <td>Coverage Area</td>
+                            <td>Up to 7 acres per charge</td>
+                        </tr>
+                        <tr>
+                            <td>Charging Time</td>
+                            <td>~9 hours (standard charger)</td>
+                        </tr>
+                        <tr>
+                            <td>Max Incline</td>
+                            <td>22° / 40% slope</td>
+                        </tr>
+                        <tr>
+                            <td>Obstacle Detection</td>
+                            <td>360° Camera + Ultrasonic + LiDAR</td>
+                        </tr>
+                        <tr>
+                            <td>Service Life</td>
+                            <td>5,000 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty</td>
+                            <td>5 years or 2,000 hours (whichever first)</td>
+                        </tr>
+                        <tr>
+                            <td>Price (USD)</td>
+                            <td>$59,999.99</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- GET STARTED -->
+        <section class="get-started">
+            <div class="container">
+                <h2>How to Get Started with GLK</h2>
+                <p>A simple 6-step process to transform your operation.</p>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Contact GLK</h4>
+                        <p>Request a quote or schedule a Voyager demo. Our team will discuss your properties and operations.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Site Assessment</h4>
+                        <p>GLK evaluates your properties for Voyager compatibility. We identify optimal deployment zones.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Equipment Selection</h4>
+                        <p>Customize your Voyager and 60V tool lineup based on your workflow and crew capacity.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Financing Options</h4>
+                        <p>Pay in full or finance through Kress. Multiple terms available to match your cash flow.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4>Delivery & Onboarding</h4>
+                        <p>GLK handles setup, property mapping, crew training, and initial field operations support.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h4>Go to Work</h4>
+                        <p>Voyager becomes part of your daily operation. Monitor via the Kress app. Scale when ready.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE AREAS -->
+        <section class="service-areas" id="service">
+            <div class="container">
+                <h2>Service Areas</h2>
+                <p>GLK Turf Solutions proudly serves Texas and Oklahoma with certified Kress equipment and expert support.</p>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <h4>Texas Coverage</h4>
+                        <p><strong>DFW Metro:</strong> Dallas, Fort Worth, Arlington, Plano, Irving</p>
+                        <p><strong>Houston Area:</strong> Houston, The Woodlands, Sugar Land</p>
+                        <p><strong>Austin Region:</strong> Austin, Lakeway, Cedar Park</p>
+                        <p><strong>San Antonio Area:</strong> San Antonio, New Braunfels</p>
+                        <p><strong>Additional:</strong> Tyler, Waco, Lubbock, and select rural areas</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Oklahoma Coverage</h4>
+                        <p><strong>OKC Metro:</strong> Oklahoma City, Edmond, Norman, Midwest City</p>
+                        <p><strong>Tulsa Area:</strong> Tulsa, Broken Arrow, Jenks</p>
+                        <p><strong>Additional:</strong> Lawton, Stillwater, and surrounding regions</p>
+                        <p style="margin-top: 20px;"><em>Additional regions and properties available by special request. Contact GLK for service expansion inquiries.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Operators Are Saying</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"Voyager freed up my crew to handle the jobs we actually make money on. First month, we added three new service lines. Game changer."</div>
+                        <div class="testimonial-author">Marcus T., Landscape Manager</div>
+                        <div class="testimonial-title">DFW Metro</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"Our crew's mood improved immediately. No one was stuck on the mower all day. Equipment is reliable, support from GLK is excellent. This is the future."</div>
+                        <div class="testimonial-author">Sarah J., Operations Director</div>
+                        <div class="testimonial-title">Austin-area Lawn Care</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"We paid for Voyager in less than one season. Margin improvement was exactly what GLK promised. Already planning our second unit."</div>
+                        <div class="testimonial-author">David R., Owner</div>
+                        <div class="testimonial-title">Oklahoma City Services</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Own the Market?</h2>
+                <p class="subtitle">Contact GLK Turf Solutions for a Kress Voyager demo and equipment consultation.</p>
+                <div class="btn-group">
+                    <button class="btn-primary">Get a Quote</button>
+                    <button class="btn-secondary" style="color: var(--white); border-color: var(--white);">Call (XXX) XXX-XXXX</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>GLK Turf Solutions</h4>
+                    <p>Your certified Kress dealer for commercial mowing and landscape equipment in Texas and Oklahoma.</p>
+                    <div class="footer-badge">Certified Kress Dealer</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#products">Products</a>
+                    <a href="#why">Why GLK</a>
+                    <a href="#roi">ROI Calculator</a>
+                    <a href="#service">Service Areas</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="#">Equipment Support</a>
+                    <a href="#">Financing Options</a>
+                    <a href="#">Warranty Info</a>
+                    <a href="#">Schedule Demo</a>
+                    <a href="#">Service Request</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Phone:</strong><br><a href="tel:XXX-XXX-XXXX">(XXX) XXX-XXXX</a></p>
+                    <p><strong>Email:</strong><br><a href="mailto:info@glkturf.com">info@glkturf.com</a></p>
+                    <p><strong>Service Areas:</strong><br>Texas & Oklahoma</p>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <p>&copy; 2026 GLK Turf Solutions. All rights reserved. | <a href="#" style="color: var(--green-accent);">Privacy Policy</a> | <a href="#" style="color: var(--green-accent);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

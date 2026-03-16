@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLK Turf Solutions | Kress Commercial Electric Equipment — Texas & Oklahoma</title>
+<meta name="description" content="GLK Turf Solutions is your certified Kress dealer in TX & OK. Autonomous mowers, electric handheld tools, and CyberTank charging. Same staff. Twice the lawns. Higher margins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1A1A1A; line-height: 1.6; background: #fff; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --green-dark: #2D5016;
+  --green-mid: #3A6B1E;
+  --green-light: #E8F0E4;
+  --green-accent: #5FA03B;
+  --gray-50: #F8F9FA;
+  --gray-100: #F0F1F3;
+  --gray-200: #DDE0E4;
+  --gray-500: #6B7280;
+  --gray-700: #374151;
+  --gray-900: #1A1A1A;
+  --dark-bg: #0F1A0A;
+  --white: #FFFFFF;
+  --orange-promo: #E8740C;
+  --orange-light: #FFF4E6;
+  --max-w: 1200px;
+  --section-pad: 80px 24px;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.section-pad { padding: var(--section-pad); }
+.text-center { text-align: center; }
+
+/* ===== PROMO BAR (ABOVE NAV) ===== */
+.promo-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 101; background: var(--orange-promo); color: var(--white); text-align: center; padding: 10px 24px; font-size: 14px; font-weight: 600; }
+.promo-bar strong { font-weight: 800; }
+
+/* ===== NAV ===== */
+.nav { position: fixed; top: 40px; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-200); backdrop-filter: blur(8px); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+.nav-logo { font-size: 18px; font-weight: 800; color: var(--green-dark); letter-spacing: -0.5px; }
+.nav-logo span { color: var(--gray-500); font-weight: 500; font-size: 13px; display: block; letter-spacing: 0; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color 0.2s; }
+.nav-links a:hover { color: var(--green-dark); }
+.btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: pointer; border: none; font-family: inherit; }
+.btn-primary { background: var(--green-dark); color: var(--white); padding: 14px 32px; font-size: 16px; }
+.btn-primary:hover { background: var(--green-mid); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,80,22,0.3); }
+.btn-secondary { background: transparent; color: var(--green-dark); border: 2px solid var(--green-dark); padding: 12px 28px; font-size: 15px; }
+.btn-secondary:hover { background: var(--green-dark); color: var(--white); }
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+.nav-cta { font-size: 14px !important; padding: 10px 20px !important; background: var(--green-dark) !important; color: var(--white) !important; border: 2px solid var(--green-dark) !important; }
+.nav-cta:hover { background: var(--green-mid) !important; border-color: var(--green-mid) !important; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,80,22,0.3); }
+
+/* ===== HERO ===== */
+.hero { padding: 60px 24px 80px; padding-top: 160px; background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 50%, var(--green-light) 100%); }
+.hero-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.hero-copy h1 { font-size: 52px; font-weight: 800; line-height: 1.1; color: var(--gray-900); margin-bottom: 20px; letter-spacing: -1.5px; }
+.hero-copy h1 em { font-style: normal; color: var(--green-dark); }
+.hero-copy .subtitle { font-size: 20px; color: var(--gray-500); line-height: 1.5; margin-bottom: 32px; max-width: 520px; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+.hero-trust { display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-trust-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gray-500); }
+.hero-trust-item svg { flex-shrink: 0; }
+.hero-visual { position: relative; }
+.hero-img-placeholder { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--green-light), #D4E8D0); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 14px; color: var(--gray-500); border: 2px dashed var(--gray-200); overflow: hidden; }
+.hero-img-placeholder .placeholder-icon { font-size: 64px; margin-bottom: 12px; opacity: 0.6; }
+.hero-img-placeholder .placeholder-text { font-weight: 600; color: var(--gray-700); }
+.hero-badge { position: absolute; bottom: -16px; right: 20px; background: var(--white); border-radius: 12px; padding: 16px 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+.hero-badge .badge-number { font-size: 28px; font-weight: 800; color: var(--green-dark); }
+.hero-badge .badge-label { font-size: 12px; color: var(--gray-500); font-weight: 500; }
+
+/* ===== LOGOS BAR ===== */
+.logos-bar { padding: 40px 24px; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+.logos-bar-inner { max-width: var(--max-w); margin: 0 auto; }
+.logos-bar p { text-align: center; font-size: 13px; color: var(--gray-500); font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+.logos-grid { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+.logo-item { font-size: 15px; font-weight: 700; color: var(--gray-500); opacity: 0.6; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ===== PROBLEM SECTION ===== */
+.problem { padding: var(--section-pad); }
+.problem-inner { max-width: 860px; margin: 0 auto; }
+.section-label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--green-accent); margin-bottom: 12px; }
+.section-title { font-size: 40px; font-weight: 800; line-height: 1.15; color: var(--gray-900); margin-bottom: 20px; letter-spacing: -1px; }
+.section-subtitle { font-size: 18px; color: var(--gray-500); line-height: 1.6; margin-bottom: 40px; max-width: 700px; }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.problem-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 24px; display: flex; gap: 16px; align-items: flex-start; }
+.problem-card .icon { flex-shrink: 0; width: 40px; height: 40px; background: #FEE2E2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.problem-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.problem-card p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+
+/* ===== SOLUTION / VOYAGER SECTION ===== */
+.solution { padding: var(--section-pad); background: var(--gray-50); }
+.solution-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.solution-img { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, #D4E8D0, var(--green-light)); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 14px; color: var(--gray-500); border: 2px dashed var(--gray-200); }
+.solution-img .placeholder-icon { font-size: 64px; margin-bottom: 8px; opacity: 0.6; }
+.solution-copy .highlight-box { background: var(--green-dark); color: var(--white); padding: 16px 20px; border-radius: 8px; font-size: 18px; font-weight: 700; margin-top: 28px; display: inline-block; }
+.spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.spec-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gray-700); }
+.spec-item .spec-val { font-weight: 700; }
+
+/* ===== ROI SECTION ===== */
+.roi { padding: var(--section-pad); }
+.roi-inner { max-width: 1000px; margin: 0 auto; }
+.roi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
+.roi-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: 12px; padding: 28px 20px; text-align: center; transition: border-color 0.2s; }
+.roi-card:hover { border-color: var(--green-accent); }
+.roi-card .roi-icon { font-size: 32px; margin-bottom: 12px; }
+.roi-card .roi-number { font-size: 36px; font-weight: 800; color: var(--green-dark); margin-bottom: 4px; }
+.roi-card .roi-label { font-size: 14px; color: var(--gray-500); font-weight: 500; }
+.roi-table-wrap { overflow-x: auto; margin: 32px 0; }
+.roi-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.roi-table th { background: var(--green-dark); color: var(--white); padding: 14px 18px; text-align: left; font-weight: 600; }
+.roi-table th:first-child { border-radius: 8px 0 0 0; }
+.roi-table th:last-child { border-radius: 0 8px 0 0; }
+.roi-table td { padding: 14px 18px; border-bottom: 1px solid var(--gray-200); }
+.roi-table tr:nth-child(even) td { background: var(--gray-50); }
+.roi-table .highlight-row td { background: var(--green-light); font-weight: 700; }
+.roi-callout { background: var(--green-light); border: 2px solid var(--green-dark); border-radius: 12px; padding: 28px; text-align: center; margin-top: 32px; }
+.roi-callout p { font-size: 20px; font-weight: 700; color: var(--green-dark); }
+.roi-callout .sub { font-size: 15px; font-weight: 400; color: var(--gray-700); margin-top: 8px; }
+
+/* ===== FEATURES ===== */
+.features { padding: var(--section-pad); background: var(--gray-50); }
+.features-inner { max-width: var(--max-w); margin: 0 auto; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.feature-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 32px 28px; transition: all 0.2s; }
+.feature-card:hover { border-color: var(--green-accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.feature-card .f-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+.feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.feature-card p { font-size: 14px; color: var(--gray-500); line-height: 1.6; margin-bottom: 12px; }
+.feature-card .proof { font-size: 13px; color: var(--green-dark); font-weight: 600; font-style: italic; }
+.f-icon.green { background: var(--green-light); }
+.f-icon.blue { background: #E6EFF7; }
+.f-icon.amber { background: #FEF3C7; }
+
+/* ===== PRODUCT LINEUP ===== */
+.lineup { padding: var(--section-pad); }
+.lineup-inner { max-width: var(--max-w); margin: 0 auto; }
+.lineup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.lineup-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; transition: all 0.2s; }
+.lineup-card:hover { border-color: var(--green-accent); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.lineup-card-img { height: 180px; background: linear-gradient(135deg, var(--green-light), #D4E8D0); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+.lineup-card-body { padding: 24px; }
+.lineup-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.lineup-card-body .price { font-size: 14px; color: var(--green-dark); font-weight: 700; margin-bottom: 10px; }
+.lineup-card-body p { font-size: 14px; color: var(--gray-500); line-height: 1.5; margin-bottom: 16px; }
+.lineup-card-body ul { list-style: none; padding: 0; }
+.lineup-card-body ul li { font-size: 13px; color: var(--gray-700); padding: 3px 0; padding-left: 20px; position: relative; }
+.lineup-card-body ul li::before { content: "✓"; position: absolute; left: 0; color: var(--green-accent); font-weight: 700; }
+
+/* ===== WHY GLK ===== */
+.why-glk { padding: var(--section-pad); background: linear-gradient(rgba(15,26,10,0.88), rgba(15,26,10,0.92)), url('kress-images/fleet-aerial-golf.png') center/cover no-repeat; color: var(--white); }
+.why-glk-inner { max-width: var(--max-w); margin: 0 auto; }
+.why-glk .section-label { color: var(--green-accent); }
+.why-glk .section-title { color: var(--white); }
+.why-glk .section-subtitle { color: rgba(255,255,255,0.7); }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+.why-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 28px; }
+.why-card .w-icon { font-size: 28px; margin-bottom: 12px; }
+.why-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.why-card p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials { padding: var(--section-pad); }
+.testimonials-inner { max-width: var(--max-w); margin: 0 auto; }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.test-card { background: var(--gray-50); border-left: 4px solid var(--green-dark); border-radius: 0 12px 12px 0; padding: 32px 28px; }
+.test-card .quote { font-size: 15px; color: var(--gray-700); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+.test-card .author { font-size: 14px; font-weight: 700; color: var(--gray-900); }
+.test-card .role { font-size: 13px; color: var(--gray-500); }
+.test-card .placeholder-note { font-size: 11px; color: var(--gray-500); margin-top: 8px; font-style: normal; background: var(--orange-light); padding: 6px 10px; border-radius: 4px; }
+
+/* ===== SERVICE AREAS ===== */
+.areas { padding: var(--section-pad); background: var(--gray-50); }
+.areas-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.areas-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; text-align: left; }
+.area-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 32px; }
+.area-block h3 { font-size: 16px; font-weight: 700; color: var(--green-dark); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--green-accent); padding-bottom: 10px; }
+.city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+.city-grid span { font-size: 14px; color: var(--gray-700); padding: 4px 0; display: flex; align-items: center; gap: 6px; }
+.city-grid span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--green-accent); flex-shrink: 0; }
+.areas-note { margin-top: 32px; font-size: 15px; color: var(--gray-700); background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; padding: 16px 24px; display: inline-block; }
+
+/* ===== SOURCEWELL CALLOUT ===== */
+.sourcewell { padding: 48px 24px; background: #EEF2FF; border-top: 1px solid #C7D2FE; border-bottom: 1px solid #C7D2FE; }
+.sourcewell-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; gap: 24px; }
+.sourcewell-icon { flex-shrink: 0; width: 56px; height: 56px; background: #4F46E5; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 800; }
+.sourcewell-copy h3 { font-size: 18px; font-weight: 700; color: #312E81; margin-bottom: 4px; }
+.sourcewell-copy p { font-size: 14px; color: #6366A0; line-height: 1.5; }
+
+/* ===== FAQ ===== */
+.faq { padding: var(--section-pad); }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--gray-200); }
+.faq-q { width: 100%; background: none; border: none; font-family: inherit; font-size: 16px; font-weight: 600; color: var(--gray-900); text-align: left; padding: 20px 40px 20px 0; cursor: pointer; position: relative; display: block; }
+.faq-q::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 22px; font-weight: 400; color: var(--gray-500); transition: transform 0.2s; }
+.faq-q.open::after { content: "−"; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-a-inner { padding: 0 0 20px; font-size: 15px; color: var(--gray-500); line-height: 1.7; }
+
+/* ===== FINANCING ===== */
+.financing { padding: var(--section-pad); background: var(--gray-50); }
+.financing-inner { max-width: 900px; margin: 0 auto; }
+.fin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.fin-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: 12px; padding: 36px 28px; }
+.fin-card.recommended { border-color: var(--green-dark); }
+.fin-badge { background: var(--green-dark); color: var(--white); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
+.fin-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.fin-card .fin-for { font-size: 14px; color: var(--gray-500); margin-bottom: 16px; }
+.fin-card ul { list-style: none; padding: 0; }
+.fin-card ul li { font-size: 14px; color: var(--gray-700); padding: 6px 0 6px 24px; position: relative; }
+.fin-card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--green-accent); font-weight: 700; }
+
+/* ===== FINAL CTA ===== */
+.final-cta { padding: 100px 24px; background: linear-gradient(rgba(45,80,22,0.85), rgba(15,26,10,0.92)), url('kress-images/voyager-night-satellite.png') center/cover no-repeat; color: var(--white); text-align: center; position: relative; overflow: hidden; }
+.final-cta::before { content: ""; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: rgba(255,255,255,0.03); border-radius: 50%; }
+.final-cta h2 { font-size: 44px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; position: relative; }
+.final-cta .sub { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+.final-cta .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; position: relative; }
+.final-cta .btn-white { background: var(--white); color: var(--green-dark); padding: 16px 36px; font-size: 17px; font-weight: 700; border-radius: 6px; }
+.final-cta .btn-white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.final-cta .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: var(--white); padding: 14px 32px; font-size: 15px; font-weight: 600; border-radius: 6px; background: transparent; }
+.final-cta .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+.final-cta .contact-line { font-size: 14px; color: rgba(255,255,255,0.5); position: relative; }
+.final-cta .contact-line a { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--dark-bg); color: rgba(255,255,255,0.6); padding: 60px 24px 30px; }
+.footer-inner { max-width: var(--max-w); margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.footer h4 { color: var(--white); font-size: 14px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+.footer p, .footer a { font-size: 13px; line-height: 1.8; }
+.footer a:hover { color: var(--white); }
+.footer-brand { font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 12px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; font-size: 12px; text-align: center; }
+.footer-badges { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
+.footer-badge { font-size: 12px; background: rgba(255,255,255,0.06); padding: 6px 12px; border-radius: 4px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-copy h1 { font-size: 40px; }
+  .solution-inner { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .lineup-grid { grid-template-columns: repeat(2, 1fr); }
+  .roi-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  :root { --section-pad: 60px 20px; }
+  .nav-links { display: none; }
+  .hero-copy h1 { font-size: 32px; }
+  .hero-copy .subtitle { font-size: 17px; }
+  .section-title { font-size: 30px; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+  .lineup-grid { grid-template-columns: 1fr; }
+  .roi-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .test-grid { grid-template-columns: 1fr; }
+  .fin-grid { grid-template-columns: 1fr; }
+  .areas-cols { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .final-cta h2 { font-size: 32px; }
+  .sourcewell-inner { flex-direction: column; text-align: center; }
+  .hero-badge { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROMO BAR (above header) -->
+<div class="promo-bar">
+  <strong>Limited Offer:</strong> $5,000 promotional credit on your first Kress equipment purchase &mdash; <a href="#contact" style="color:#fff;text-decoration:underline;">Claim yours today →</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">GLK Turf Solutions <span>Certified Kress Commercial Dealer</span></div>
+    <div class="nav-links">
+      <a href="#problem">Why Automate</a>
+      <a href="#voyager">Voyager</a>
+      <a href="#lineup">Equipment</a>
+      <a href="#roi">ROI</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="section-label">Kress Commercial Equipment — Texas &amp; Oklahoma</div>
+      <h1>Own the Market.<br><em>Without Adding a Crew.</em></h1>
+      <p class="subtitle">One 2-person crew becomes two. Same equipment budget. Double the properties. Autonomous mowing with proven ROI in under 12 months.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Schedule a Demo</a>
+        <a href="#roi" class="btn btn-secondary">See the ROI →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2D5016"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          40+ years industry experience
+        </div>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2D5016"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          2-hour response guarantee
+        </div>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2D5016"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Financing available
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="kress-images/hero-voyager.png" alt="Kress Voyager autonomous mower on pristine commercial lawn" style="width:100%;border-radius:16px;object-fit:cover;">
+      <div class="hero-badge">
+        <div class="badge-number">7 acres</div>
+        <div class="badge-label">per charge · fully autonomous</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER LOGOS -->
+<div class="logos-bar">
+  <div class="logos-bar-inner">
+    <p>Trusted Equipment Partners</p>
+    <div class="logos-grid">
+      <img src="kress-images/kress-logo.png" alt="Kress" style="height:30px;">
+      <img src="kress-images/imants-logo.png" alt="Imants" style="height:28px;">
+      <img src="kress-images/trimax-logo.png" alt="Trimax" style="height:30px;">
+      <img src="kress-images/abiforce-logo.svg" alt="ABI Force" style="height:32px;">
+      <img src="kress-images/abovepartech-logo.png" alt="Above Par Tech" style="height:34px;">
+      <img src="kress-images/vredo-logo.png" alt="Vredo" style="height:26px;">
+      <img src="kress-images/campey-logo.png" alt="Campey Turf Care Systems" style="height:34px;">
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="problem-inner">
+    <div class="section-label">The Challenge</div>
+    <h2 class="section-title">The Landscaping Business Is at an Inflection Point</h2>
+    <p class="section-subtitle">Labor is harder to find. Costs keep rising. Your crews can only cover so many properties. Adding staff means more trucks, more insurance, more overhead — but your pricing power is limited.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">📈</div>
+        <div>
+          <h4>Labor Costs Up 15–20%</h4>
+          <p>Landscaping labor costs have surged in the last 18 months across Texas and Oklahoma. Finding reliable crew is harder than ever.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📉</div>
+        <div>
+          <h4>Margins Under Pressure</h4>
+          <p>Most landscaping companies operate on 15–25% margins. Every crew addition adds overhead faster than revenue.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔄</div>
+        <div>
+          <h4>Scaling Is Capital-Intensive</h4>
+          <p>More crews = more trucks, more equipment, more insurance. The math makes linear growth painful.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">⏱️</div>
+        <div>
+          <h4>Mowing Eats Crew Time</h4>
+          <p>Your highest-paid crew members spend most of their day on the lowest-value task: riding a mower.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION / VOYAGER -->
+<section class="solution" id="voyager">
+  <div class="solution-inner">
+    <div class="solution-img" style="border:none;background:linear-gradient(135deg, var(--gray-50), var(--green-light));border-radius:16px;display:flex;align-items:center;justify-content:center;padding:24px;">
+      <img src="kress-images/tile_table.png" alt="Kress Voyager KR800E autonomous commercial mower" style="width:100%;object-fit:contain;border-radius:8px;">
+    </div>
+    <div class="solution-copy">
+      <div class="section-label">The Solution</div>
+      <h2 class="section-title">Meet the Kress Voyager</h2>
+      <p class="section-subtitle" style="margin-bottom:20px;">A fully electric, AI-powered autonomous mower designed for commercial landscape operations. Map a property once. Deploy daily. No operator needed.</p>
+      <div class="spec-grid">
+        <div class="spec-item">🧭 <span class="spec-val">RTK Navigation</span></div>
+        <div class="spec-item">📐 <span class="spec-val">40" Cutting Deck</span></div>
+        <div class="spec-item">🔋 <span class="spec-val">10 kWh Battery</span></div>
+        <div class="spec-item">⛰️ <span class="spec-val">22° Max Incline</span></div>
+        <div class="spec-item">🏞️ <span class="spec-val">Up to 7 Acres/Charge</span></div>
+        <div class="spec-item">🛡️ <span class="spec-val">5-Year Warranty</span></div>
+        <div class="spec-item">👁️ <span class="spec-val">360° AI Vision</span></div>
+        <div class="spec-item">📱 <span class="spec-val">Fleet App Tracking</span></div>
+      </div>
+      <div class="highlight-box">Same 2-Person Crew. Twice the Properties.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BANNER -->
+<div style="width:100%;height:300px;overflow:hidden;position:relative;">
+  <img src="kress-images/soccer-field-stripes.jpg" alt="Commercial sports field maintained by Kress Voyager - perfect striping" style="width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.6));padding:20px 24px;">
+    <p style="color:#fff;font-size:15px;font-weight:600;max-width:1200px;margin:0 auto;text-align:center;">Real results: Kress autonomous mower-maintained sports turf — zero operator, perfect stripes, every time.</p>
+  </div>
+</div>
+
+<!-- ROI -->
+<section class="roi" id="roi">
+  <div class="roi-inner text-center">
+    <div class="section-label">The Numbers</div>
+    <h2 class="section-title">The Math Is Simple. The Results Are Real.</h2>
+    <p class="section-subtitle" style="max-width:650px;margin:0 auto 0;">Voyager costs about the same as one year of a mower operator's salary. Unlike hiring, there are no ongoing salary, benefits, or management costs.</p>
+
+    <div class="roi-grid">
+      <div class="roi-card">
+        <div class="roi-icon">👥</div>
+        <div class="roi-number">2</div>
+        <div class="roi-label">Same Crew Size</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-icon">🏘️</div>
+        <div class="roi-number">2×</div>
+        <div class="roi-label">Properties Per Day</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-icon">📊</div>
+        <div class="roi-number">+20pt</div>
+        <div class="roi-label">Margin Improvement</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-icon">📅</div>
+        <div class="roi-number">&lt;12mo</div>
+        <div class="roi-label">Breakeven Timeline</div>
+      </div>
+    </div>
+
+    <div class="roi-table-wrap">
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Traditional Model</th>
+            <th>With Voyager</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Crew Size</td>
+            <td>2 people</td>
+            <td>2 people</td>
+          </tr>
+          <tr>
+            <td>Properties Per Day</td>
+            <td>8–10</td>
+            <td>16–20</td>
+          </tr>
+          <tr>
+            <td>Annual Labor Cost</td>
+            <td>$92,000–$110,000</td>
+            <td>$92,000–$110,000</td>
+          </tr>
+          <tr>
+            <td>Annual Equipment Cost</td>
+            <td>$8,000–$12,000</td>
+            <td>$7,000–$10,000 (amortized)</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Net Margin on Mowing</td>
+            <td>~18%</td>
+            <td>35%+</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Daily Revenue Potential</td>
+            <td>$4,000–$8,000</td>
+            <td>$8,000–$16,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="roi-callout">
+      <p>Voyager pays for itself in Year 1.</p>
+      <p class="sub">Every year after? Pure margin expansion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-inner text-center">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Built for Real Commercial Operations</h2>
+    <p class="section-subtitle" style="max-width:600px;margin:0 auto;">Not a consumer gadget. Voyager is engineered for the demands of daily commercial mowing.</p>
+
+    <div class="features-grid" style="text-align:left;">
+      <div class="feature-card">
+        <div class="f-icon green">🤖</div>
+        <h3>Fully Autonomous</h3>
+        <p>Map the property once via guided ride. Voyager stores the map permanently. Every day after — autonomous. No operator, no controls, no supervision.</p>
+        <div class="proof">Setup takes 15–20 minutes per property.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon blue">🛡️</div>
+        <h3>360° Multi-Layer Safety</h3>
+        <p>Cameras, LiDAR, and ultrasonic sensors detect obstacles in every direction. If something appears — a car, a person, debris — Voyager stops immediately.</p>
+        <div class="proof">Responsibility for autonomous system sits with Kress.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon amber">🔋</div>
+        <h3>7–8 Hours Runtime</h3>
+        <p>10 kWh battery handles up to 7 acres on a single charge. Extend runtime instantly with compatible Kress CyberPack batteries.</p>
+        <div class="proof">Covers most full mowing days without recharging.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon green">📱</div>
+        <h3>Fleet Tracking & Diagnostics</h3>
+        <p>Kress Commercial app provides real-time tracking, remote diagnostics, and over-the-air updates. Manage multiple Voyagers from one dashboard.</p>
+        <div class="proof">No spreadsheets. No guesswork.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon blue">🌱</div>
+        <h3>Zero Emissions. Quieter Work.</h3>
+        <p>Fully electric — no exhaust, no fuel costs. Quieter operation means less hearing damage, less fatigue, better crew retention.</p>
+        <div class="proof">Comply with noise ordinances. Crews stay longer.</div>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon amber">🚛</div>
+        <h3>Deploys Like a Regular Mower</h3>
+        <p>Loads onto your trailer just like a standard zero-turn. No special equipment. No learning curve. Your workflow stays the same.</p>
+        <div class="proof">Drop it. Drive it. Deploy it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT LINEUP -->
+<section class="lineup" id="lineup">
+  <div class="lineup-inner text-center">
+    <div class="section-label">Full Equipment Lineup</div>
+    <h2 class="section-title">Beyond Voyager: Complete Kress Commercial Equipment</h2>
+    <p class="section-subtitle" style="max-width:650px;margin:0 auto;">GLK is your one-stop source for the entire Kress commercial electric lineup — mowers, handheld tools, and mobile charging infrastructure.</p>
+
+    <div class="lineup-grid" style="text-align:left;">
+      <div class="lineup-card">
+        <div class="lineup-card-img" style="padding:20px;height:auto;background:linear-gradient(135deg, var(--gray-50), var(--green-light));display:flex;align-items:center;justify-content:center;"><img src="kress-images/tile_table.png" alt="Kress Voyager KR800E autonomous commercial mower" style="width:100%;height:160px;object-fit:contain;"></div>
+        <div class="lineup-card-body">
+          <h3>Kress Voyager KR800E</h3>
+          <p class="price">$59,999 · Autonomous Mower</p>
+          <p>The flagship. Fully autonomous, AI-powered, 40" deck. Handles 7 acres per charge with RTK navigation.</p>
+          <ul>
+            <li>RTK + AI Vision + LiDAR</li>
+            <li>5-year / 2,000-hour warranty</li>
+            <li>$2,000 refundable reservation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img" style="padding:0;height:auto;background:none;"><img src="kress-images/blower-action.jpg" alt="Kress 60V commercial backpack blower in action" style="width:100%;height:200px;object-fit:cover;"></div>
+        <div class="lineup-card-body">
+          <h3>60V Commercial Handheld</h3>
+          <p class="price">Full lineup · Electric Power Tools</p>
+          <p>Complete electric handheld tool suite — hedge trimmers, backpack blowers, chainsaws, brush cutters, and self-propelled mower.</p>
+          <ul>
+            <li>CyberPack 8-minute charge batteries</li>
+            <li>3,000 battery cycle lifespan</li>
+            <li>Zero emissions, reduced noise</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img" style="padding:0;height:auto;background:none;"><img src="kress-images/cyberpack-battery.jpg" alt="Kress CyberPack 60V commercial battery" style="width:100%;height:200px;object-fit:cover;"></div>
+        <div class="lineup-card-body">
+          <h3>CyberTank Power Station</h3>
+          <p class="price">5 kWh & 7.2 kWh · Mobile Charging</p>
+          <p>Portable power station that charges tools on the trailer. Eliminate gas cans and generators from your fleet entirely.</p>
+          <ul>
+            <li>Charges all Kress commercial batteries</li>
+            <li>Truck/trailer mountable</li>
+            <li>Solar compatible</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GLK -->
+<section class="why-glk">
+  <div class="why-glk-inner text-center">
+    <div class="section-label">Your Partner</div>
+    <h2 class="section-title">Why Buy Through GLK Turf Solutions?</h2>
+    <p class="section-subtitle" style="max-width:600px;margin:0 auto;">You're not just buying equipment. You're gaining a partner who understands your business, your market, and your bottom line.</p>
+
+    <div class="why-grid" style="text-align:left;">
+      <div class="why-card">
+        <div class="w-icon">📍</div>
+        <h3>Local Expertise in TX &amp; OK</h3>
+        <p>Based in Texas. Operating throughout Texas and Oklahoma. 3 sales and service managers positioned across key markets. On-the-ground support when you need it.</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">🤝</div>
+        <h3>Consultancy, Not Just Sales</h3>
+        <p>Our team — former golf course superintendents and turf managers — approaches every engagement as a partnership. We assess your operation before recommending solutions.</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">💰</div>
+        <h3>Flexible Financing Options</h3>
+        <p>We work with multiple lenders to find terms that match your cash flow. Pay in full or finance — your business keeps moving either way.</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">⚡</div>
+        <h3>Full-Service Equipment Ecosystem</h3>
+        <p>Autonomous mowers, electric handheld tools, GPS spraying, drone mapping — one partner for all your turf automation needs. Plus a 2-hour response guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCEWELL -->
+<section class="sourcewell">
+  <div class="sourcewell-inner">
+    <div class="sourcewell-icon">🏛️</div>
+    <div class="sourcewell-copy">
+      <h3>Municipalities: Kress Has a Sourcewell Cooperative Contract</h3>
+      <p>Government entities can purchase Kress equipment through Sourcewell's cooperative procurement program — streamlined purchasing, competitive pricing, no separate bid process required. Ask us how.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" style="background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('kress-images/overhead-stripes.png') center/cover no-repeat;">
+  <div class="testimonials-inner text-center">
+    <div class="section-label">What Clients Say</div>
+    <h2 class="section-title">Trusted by Turf Professionals Across Texas &amp; Oklahoma</h2>
+
+    <div class="test-grid" style="text-align:left;">
+      <div class="test-card">
+        <div class="quote">"Customer service is their number one focus. We've purchased several pieces of equipment from GLK Turf and their team is always responsive and knowledgeable."</div>
+        <div class="author">Troy Crawford</div>
+        <div class="role">Director of Grounds, FC Dallas</div>
+      </div>
+      <div class="test-card">
+        <div class="quote">"The perfect partner to have in your backyard. Their experience and knowledge guides their approach — they always prioritize what's best for your property."</div>
+        <div class="author">Landon Lindsay</div>
+        <div class="role">Director of Agronomy, Nelson Golf &amp; Sports Club</div>
+      </div>
+      <div class="test-card">
+        <div class="quote">"GLK's consultancy approach sets them apart. They don't just sell equipment — they help you optimize your entire operation. Multi-year customer and counting."</div>
+        <div class="author">Blake Cain</div>
+        <div class="role">Superintendent, Bent Tree Country Club</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas">
+  <div class="areas-inner">
+    <div class="section-label">Coverage</div>
+    <h2 class="section-title">Serving All of Texas &amp; Oklahoma</h2>
+    <p class="section-subtitle" style="margin:8px auto 0;">Local presence. Local expertise. Rapid response times.</p>
+
+    <div class="areas-cols">
+      <div class="area-block">
+        <h3>Texas</h3>
+        <div class="city-grid">
+          <span>Dallas–Fort Worth</span>
+          <span>Houston</span>
+          <span>Austin</span>
+          <span>San Antonio</span>
+          <span>Waco</span>
+          <span>Tyler</span>
+          <span>Abilene</span>
+          <span>Beaumont</span>
+          <span>Corpus Christi</span>
+          <span>Lubbock</span>
+          <span>Amarillo</span>
+          <span>El Paso</span>
+        </div>
+      </div>
+      <div class="area-block">
+        <h3>Oklahoma</h3>
+        <div class="city-grid">
+          <span>Oklahoma City</span>
+          <span>Tulsa</span>
+          <span>Norman</span>
+          <span>Edmond</span>
+          <span>Broken Arrow</span>
+          <span>Lawton</span>
+        </div>
+      </div>
+    </div>
+    <p class="areas-note">Don't see your city? We cover all of Texas &amp; Oklahoma. <a href="#contact" style="color:var(--green-dark);font-weight:600;">Let's talk →</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="text-center">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title" style="margin-bottom:40px;">Everything You Need to Know</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">How does Voyager handle obstacles? What if something goes wrong?</button>
+      <div class="faq-a"><div class="faq-a-inner">Voyager combines cameras, LiDAR, and ultrasonic sensors to detect obstacles in every direction. If it encounters something unexpected — a parked car, debris, a person — it stops. The system is backed by a 5-year warranty covering 2,000 operating hours. Kress Commercial's certified dealer network provides support and rapid parts replacement.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How long does it take to map a new property?</button>
+      <div class="faq-a"><div class="faq-a-inner">One guided ride along the perimeter — typically 15–20 minutes for a standard commercial property. The map is saved permanently. After mapping, deployment is fully autonomous with no special setup required.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What's the battery life? What if it runs out mid-mowing?</button>
+      <div class="faq-a"><div class="faq-a-inner">The standard 10 kWh battery provides 7–8 hours of continuous operation, covering most full mowing days. If you need to extend runtime, swap in a compatible Kress CyberPack battery instantly. Standard charging takes about 9 hours.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Does it work in rain or wet conditions?</button>
+      <div class="faq-a"><div class="faq-a-inner">Voyager can handle light rain and wet conditions. Heavy rain, standing water, or extreme weather? Not recommended — same as you'd treat any mower. Use your judgment based on turf conditions and site safety.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What if my property has steep hills?</button>
+      <div class="faq-a"><div class="faq-a-inner">Voyager handles inclines up to 22° (40% grade), which covers the vast majority of commercial properties in Texas and Oklahoma. If your property exceeds that, we'll assess it during your consultation and recommend an optimal mowing plan.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I deploy multiple Voyagers on one property?</button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Multiple Voyagers can be mapped and deployed on the same property. They operate independently and coordinate through the Kress Commercial app — ideal for larger properties, parks, or municipal campuses.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What's the warranty coverage?</button>
+      <div class="faq-a"><div class="faq-a-inner">Commercial warranty is 5 years or 2,000 operating hours (whichever comes first). Service life estimate is up to 5,000 hours with proper maintenance. After warranty, parts and labor are available through GLK at standard rates.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How much does ongoing maintenance cost?</button>
+      <div class="faq-a"><div class="faq-a-inner">Minimal compared to gas mowers. No oil changes, no spark plugs, no fuel system maintenance. Quarterly checks recommended. Typical annual maintenance runs $500–$1,000 depending on usage. Spare blade sets are about $100–$200.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What about volume pricing for multiple units?</button>
+      <div class="faq-a"><div class="faq-a-inner">Yes — GLK and Kress offer volume pricing for companies deploying multiple Voyagers or outfitting full fleets with electric equipment. The more units, the better the per-unit cost. Contact our team for a custom fleet quote.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How fast is your response time?</button>
+      <div class="faq-a"><div class="faq-a-inner">Most equipment inquiries get a response within 2 hours. Service calls are prioritized by urgency. GLK has certified technicians in key Texas and Oklahoma markets for rapid on-site support.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I trade in my existing zero-turn mower?</button>
+      <div class="faq-a"><div class="faq-a-inner">Possibly. Our team can discuss trade-in or buyout options for existing equipment. Reach out and let's talk about your current fleet.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is Kress equipment available through Sourcewell for government purchasing?</button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Kress has a Sourcewell cooperative procurement contract, which means municipalities, parks departments, school districts, and other government entities can purchase without a separate bid process. Ask us for the Sourcewell contract details.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="financing">
+  <div class="financing-inner text-center">
+    <div class="section-label">Investment</div>
+    <h2 class="section-title">Financing That Works for Your Cash Flow</h2>
+    <p class="section-subtitle" style="max-width:550px;margin:0 auto;">Voyager costs about the same as one year of a mower operator's salary. Own it outright or finance to keep cash flow intact.</p>
+
+    <div class="fin-grid" style="text-align:left;">
+      <div class="fin-card">
+        <h3>Pay in Full</h3>
+        <p class="fin-for">Best for companies with capital on hand</p>
+        <ul>
+          <li>No financing interest — own outright</li>
+          <li>Full ROI hits faster (no monthly payments)</li>
+          <li>Breakeven in ~12 months</li>
+          <li>Pure margin expansion from Month 13</li>
+        </ul>
+      </div>
+      <div class="fin-card recommended">
+        <div class="fin-badge">Most Popular</div>
+        <h3>Finance</h3>
+        <p class="fin-for">Best for preserving cash flow</p>
+        <ul>
+          <li>Spread cost over 24–60 months</li>
+          <li>Put Voyager to work immediately</li>
+          <li>Revenue from Day 1 offsets payments</li>
+          <li>GLK works with multiple lenders</li>
+          <li>Custom terms available</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <h2>Ready to Own Your Market?</h2>
+  <p class="sub">Schedule a demo, get a custom ROI analysis, or reserve your Voyager today. No obligation. 2-hour response guaranteed.</p>
+  <div class="cta-btns">
+    <a href="mailto:office@glkturfsolutions.com?subject=Kress%20Equipment%20Demo%20Request" class="btn btn-white">Schedule a Demo</a>
+    <a href="tel:4698613526" class="btn btn-outline">Call (469) 861-3526</a>
+  </div>
+  <p class="contact-line">Or email <a href="mailto:office@glkturfsolutions.com">office@glkturfsolutions.com</a> · Jeff Kadlec, Sales Manager</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">GLK Turf Solutions</div>
+        <p>Balancing Innovation &amp; Sound Agronomics since 2014. Owned and operated by turfgrass professionals with 40+ years combined experience.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">Certified Kress Dealer</span>
+          <span class="footer-badge">Sourcewell Contract</span>
+        </div>
+      </div>
+      <div>
+        <h4>Equipment</h4>
+        <p><a href="#voyager">Kress Voyager</a></p>
+        <p><a href="#lineup">60V Commercial Tools</a></p>
+        <p><a href="#lineup">CyberTank Charging</a></p>
+        <p><a href="#contact">Request a Quote</a></p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p><a href="https://glkturfsolutions.com/aboutus">About GLK</a></p>
+        <p><a href="#features">Why Kress</a></p>
+        <p><a href="#faq">FAQ</a></p>
+        <p><a href="#contact">Contact Us</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>508 E Cook St<br>Royce City, TX 75189</p>
+        <p><a href="tel:4698613526">(469) 861-3526</a></p>
+        <p><a href="mailto:office@glkturfsolutions.com">office@glkturfsolutions.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 GLK Turf Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- FAQ ACCORDION JS -->
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.style.maxHeight = null;
+    });
+
+    // Open clicked (if it was closed)
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
