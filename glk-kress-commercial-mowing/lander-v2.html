@@ -1,0 +1,1058 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* ===== RESET & BASE ===== */
+.glk-page, .glk-page *, .glk-page *::before, .glk-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.glk-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1A1A1A; line-height: 1.6; background: #fff; scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
+.glk-page img { max-width: 100%; height: auto; display: block; }
+.glk-page a { text-decoration: none; color: inherit; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --green-dark: #2D5016;
+  --green-mid: #3A6B1E;
+  --green-light: #E8F0E4;
+  --green-accent: #5FA03B;
+  --gray-50: #F8F9FA;
+  --gray-100: #F0F1F3;
+  --gray-200: #DDE0E4;
+  --gray-500: #6B7280;
+  --gray-700: #374151;
+  --gray-900: #1A1A1A;
+  --dark-bg: #0F1A0A;
+  --white: #FFFFFF;
+  --orange-promo: #E8740C;
+  --orange-light: #FFF4E6;
+  --max-w: 1200px;
+  --section-pad: 80px 24px;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.section-pad { padding: var(--section-pad); }
+.text-center { text-align: center; }
+
+/* ===== PROMO BAR ===== */
+.promo-bar { position: sticky; top: 0; left: 0; right: 0; z-index: 101; background: var(--orange-promo); color: var(--white); text-align: center; padding: 10px 24px; font-size: 14px; font-weight: 600; }
+.promo-bar strong { font-weight: 800; }
+
+/* ===== NAV ===== */
+.nav { position: sticky; top: 40px; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-200); backdrop-filter: blur(8px); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+.nav-logo { font-size: 18px; font-weight: 800; color: var(--green-dark); letter-spacing: -0.5px; }
+.nav-logo span { color: var(--gray-500); font-weight: 500; font-size: 13px; display: block; letter-spacing: 0; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-700); transition: color 0.2s; }
+.nav-links a:hover { color: var(--green-dark); }
+.btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: pointer; border: none; font-family: inherit; }
+.btn-primary { background: var(--green-dark); color: var(--white) !important; padding: 14px 32px; font-size: 16px; }
+.btn-primary:hover { background: var(--green-mid); color: var(--white) !important; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,80,22,0.3); }
+.btn-secondary { background: transparent; color: var(--green-dark); border: 2px solid var(--green-dark); padding: 12px 28px; font-size: 15px; }
+.btn-secondary:hover { background: var(--green-dark); color: var(--white) !important; }
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+.nav-cta { font-size: 14px !important; padding: 10px 20px !important; background: var(--green-dark) !important; color: var(--white) !important; border: 2px solid var(--green-dark) !important; }
+.nav-cta:hover { background: var(--green-mid) !important; border-color: var(--green-mid) !important; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,80,22,0.3); }
+
+/* ===== HERO ===== */
+.hero { padding: 60px 24px 80px; padding-top: 80px; background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 50%, var(--green-light) 100%); }
+.hero-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.hero-copy h1 { font-size: 48px; font-weight: 800; line-height: 1.1; color: var(--gray-900); margin-bottom: 20px; letter-spacing: -1.5px; }
+.hero-copy h1 em { font-style: normal; color: var(--green-dark); }
+.hero-copy .subtitle { font-size: 20px; color: var(--gray-500); line-height: 1.5; margin-bottom: 32px; max-width: 520px; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+.hero-trust { display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-trust-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gray-500); }
+.hero-visual { position: relative; }
+.hero-badge { position: absolute; bottom: -16px; left: 20px; background: var(--white); border-radius: 12px; padding: 16px 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+.hero-badge .badge-number { font-size: 28px; font-weight: 800; color: var(--green-dark); }
+.hero-badge .badge-label { font-size: 12px; color: var(--gray-500); font-weight: 500; }
+
+/* ===== LOGOS BAR ===== */
+.logos-bar { padding: 40px 24px; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+.logos-bar-inner { max-width: var(--max-w); margin: 0 auto; }
+.logos-bar p { text-align: center; font-size: 13px; color: var(--gray-500); font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+.logos-grid { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+
+/* ===== SECTION SHARED ===== */
+.section-label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--green-accent); margin-bottom: 12px; }
+.section-title { font-size: 40px; font-weight: 800; line-height: 1.15; color: var(--gray-900); margin-bottom: 20px; letter-spacing: -1px; }
+.section-subtitle { font-size: 18px; color: var(--gray-500); line-height: 1.6; margin-bottom: 40px; max-width: 700px; }
+
+/* ===== PROBLEM SECTION ===== */
+.problem { padding: var(--section-pad); }
+.problem-inner { max-width: 860px; margin: 0 auto; }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.problem-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 24px; display: flex; gap: 16px; align-items: flex-start; }
+.problem-card .icon { flex-shrink: 0; width: 40px; height: 40px; background: #FEE2E2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.problem-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.problem-card p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+.problem-cta { margin-top: 0; padding: 60px 24px; text-align: center; font-size: 24px; font-weight: 700; color: var(--white); background: linear-gradient(135deg, rgba(15,26,10,0.75), rgba(45,80,22,0.75)), url('https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/soccer-field-stripes.jpg') center/cover no-repeat; border-radius: 0; }
+
+/* ===== VOYAGER INTRO ===== */
+.voyager-intro { padding: var(--section-pad); background: var(--gray-50); }
+.voyager-intro-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.voyager-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 24px 0; }
+.voyager-specs .spec { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gray-700); }
+.voyager-specs .spec strong { font-weight: 700; }
+.voyager-price { background: var(--green-dark); color: var(--white); padding: 20px 24px; border-radius: 10px; margin-top: 24px; }
+.voyager-price .price-amount { font-size: 32px; font-weight: 800; }
+.voyager-price .price-note { font-size: 14px; opacity: 0.8; margin-top: 4px; }
+
+/* ===== UNFAIR ADVANTAGE ===== */
+.advantage { padding: var(--section-pad); }
+.advantage-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.advantage-body { font-size: 17px; color: var(--gray-700); line-height: 1.8; }
+.advantage-img { border-radius: 16px; overflow: hidden; }
+.advantage-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; min-height: 320px; }
+
+/* ===== ECONOMICS / COMPARISON TABLE ===== */
+.economics { padding: var(--section-pad); background: var(--gray-50); }
+.economics-inner { max-width: 1000px; margin: 0 auto; }
+.econ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+.econ-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: 12px; padding: 36px 28px; }
+.econ-card.voyager-model { border-color: var(--green-dark); }
+.econ-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: var(--gray-900); }
+.econ-card .econ-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 14px; }
+.econ-card .econ-row:last-child { border-bottom: none; }
+.econ-card .econ-row .label { color: var(--gray-500); }
+.econ-card .econ-row .value { font-weight: 700; color: var(--gray-900); }
+.econ-result { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.result-card { background: var(--green-light); border: 2px solid var(--green-dark); border-radius: 12px; padding: 28px; text-align: center; }
+.result-card .result-number { font-size: 36px; font-weight: 800; color: var(--green-dark); }
+.result-card .result-label { font-size: 15px; color: var(--gray-700); margin-top: 4px; }
+.result-card .result-sub { font-size: 13px; color: var(--gray-500); margin-top: 4px; }
+
+/* ===== CONTENT SECTIONS (Logistics, Mapping, Service Life, etc.) ===== */
+.content-section { padding: var(--section-pad); }
+.content-section.alt { background: var(--gray-50); }
+.content-section-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.content-section-inner.reverse { direction: rtl; }
+.content-section-inner.reverse > * { direction: ltr; }
+.content-copy { }
+.content-copy h2 { font-size: 36px; font-weight: 800; line-height: 1.15; color: var(--gray-900); margin-bottom: 16px; letter-spacing: -0.5px; }
+.content-copy p { font-size: 16px; color: var(--gray-500); line-height: 1.7; margin-bottom: 16px; }
+.content-img { border-radius: 16px; overflow: hidden; }
+.content-img img { width: 100%; object-fit: cover; border-radius: 16px; }
+
+/* ===== SERVICE LIFE STATS ===== */
+.stats-row { display: flex; gap: 32px; margin: 28px 0; }
+.stat-block { text-align: center; }
+.stat-block .stat-num { font-size: 36px; font-weight: 800; color: var(--green-dark); line-height: 1; }
+.stat-block .stat-unit { font-size: 14px; color: var(--gray-500); font-weight: 500; }
+
+/* ===== SAFETY / CERTIFICATIONS ===== */
+.safety { padding: var(--section-pad); background: var(--dark-bg); color: var(--white); }
+.safety-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.safety .section-label { color: var(--green-accent); }
+.safety .section-title { color: var(--white); }
+.safety-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; text-align: left; }
+.safety-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px; }
+.safety-card .s-icon { font-size: 28px; margin-bottom: 14px; }
+.safety-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.safety-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* ===== EQUIPMENT LINEUP (6 CARDS) ===== */
+.lineup { padding: var(--section-pad); }
+.lineup-inner { max-width: var(--max-w); margin: 0 auto; }
+.lineup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.lineup-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; transition: all 0.2s; }
+.lineup-card:hover { border-color: var(--green-accent); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.lineup-card-img { height: 200px; overflow: hidden; background: var(--gray-50); }
+.lineup-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.lineup-card-body { padding: 24px; }
+.lineup-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.lineup-card-body p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+
+/* ===== ACTION GALLERY ===== */
+.action-gallery { padding: 60px 24px; background: var(--gray-50); }
+.action-gallery-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.gallery-item { border-radius: 12px; overflow: hidden; position: relative; }
+.gallery-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.gallery-item .gallery-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 16px; color: var(--white); font-size: 14px; font-weight: 600; }
+
+/* ===== SPECS TABLE ===== */
+.specs { padding: var(--section-pad); }
+.specs-inner { max-width: 800px; margin: 0 auto; }
+.specs-table { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 15px; }
+.specs-table th { background: var(--green-dark); color: var(--white); padding: 14px 20px; text-align: left; font-weight: 600; }
+.specs-table th:first-child { border-radius: 8px 0 0 0; }
+.specs-table th:last-child { border-radius: 0 8px 0 0; }
+.specs-table td { padding: 14px 20px; border-bottom: 1px solid var(--gray-200); }
+.specs-table tr:nth-child(even) td { background: var(--gray-50); }
+.specs-table .spec-label { font-weight: 600; color: var(--gray-700); }
+.specs-table .spec-value { color: var(--gray-900); }
+.specs-table .highlight-row td { background: var(--green-light); font-weight: 700; }
+
+/* ===== GETTING STARTED STEPS ===== */
+.steps { padding: var(--section-pad); background: var(--gray-50); }
+.steps-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; text-align: left; }
+.step-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 32px 28px; position: relative; }
+.step-card:hover { border-color: var(--green-accent); }
+.step-number { width: 40px; height: 40px; background: var(--green-dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+.step-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.step-card p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+/* ===== SERVICE AREAS ===== */
+.areas { padding: var(--section-pad); }
+.areas-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.areas-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; text-align: left; }
+.area-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 32px; }
+.area-block h3 { font-size: 16px; font-weight: 700; color: var(--green-dark); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--green-accent); padding-bottom: 10px; }
+.area-sub { font-size: 13px; font-weight: 600; color: var(--gray-700); margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+.city-grid span { font-size: 14px; color: var(--gray-700); padding: 4px 0; display: flex; align-items: center; gap: 6px; }
+.city-grid span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--green-accent); flex-shrink: 0; }
+.areas-note { margin-top: 32px; font-size: 15px; color: var(--gray-700); background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; padding: 16px 24px; display: inline-block; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials { padding: var(--section-pad); background: var(--gray-50); }
+.testimonials-inner { max-width: var(--max-w); margin: 0 auto; }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.test-card { background: var(--white); border-left: 4px solid var(--green-dark); border-radius: 0 12px 12px 0; padding: 32px 28px; }
+.test-card .quote { font-size: 15px; color: var(--gray-700); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+.test-card .author { font-size: 14px; font-weight: 700; color: var(--gray-900); }
+.test-card .role { font-size: 13px; color: var(--gray-500); }
+
+/* ===== WORKER BENEFITS BANNER ===== */
+.worker-banner { padding: 80px 24px; background: linear-gradient(135deg, rgba(15,26,10,0.8), rgba(45,80,22,0.8)), url('https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/overhead-stripes.png') center/cover no-repeat; color: var(--white); }
+.worker-banner-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.worker-banner h2 { font-size: 32px; font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
+.worker-banner p { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+/* ===== FINAL CTA / CONTACT FORM ===== */
+.final-cta { padding: 100px 24px; background: linear-gradient(rgba(45,80,22,0.85), rgba(15,26,10,0.92)), url('https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/fleet-aerial-golf.png') center/cover no-repeat; color: var(--white); position: relative; overflow: hidden; }
+.final-cta > h2 { text-align: center; font-size: 44px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; position: relative; }
+.final-cta > .sub { text-align: center; font-size: 18px; color: rgba(255,255,255,0.7); max-width: 550px; margin: 0 auto 48px; position: relative; }
+.final-cta::before { content: ""; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: rgba(255,255,255,0.03); border-radius: 50%; }
+.final-cta-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; }
+
+.contact-form-card { background: var(--white); color: var(--gray-900); border-radius: 12px; padding: 48px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.contact-form-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
+.contact-form-card .form-subtext { font-size: 15px; color: var(--gray-500); margin-bottom: 32px; line-height: 1.6; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 8px; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px 16px; font-size: 14px; border: 1px solid var(--gray-200); border-radius: 6px; font-family: inherit; transition: border-color 0.2s; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--green-dark); box-shadow: 0 0 0 3px rgba(45,80,22,0.1); }
+.form-group input::placeholder { color: var(--gray-500); }
+.form-group .required::after { content: " *"; color: #EF4444; }
+.form-submit { width: 100%; padding: 14px 24px; background: var(--green-dark); color: var(--white); border: none; border-radius: 6px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; transition: all 0.2s; }
+.form-submit:hover { background: var(--green-mid); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,80,22,0.3); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.contact-info-block { color: var(--white); display: flex; flex-direction: column; justify-content: center; }
+.contact-info-item { margin-bottom: 16px; }
+.contact-info-item p { font-size: 14px; font-weight: 500; line-height: 1.6; opacity: 0.7; }
+.contact-info-item a { color: var(--white) !important; text-decoration: underline; }
+.contact-info-item a:hover { opacity: 0.8; }
+.call-now-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 28px; }
+.call-now-icon { font-size: 36px; margin-bottom: 12px; }
+.call-now-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.call-now-card p { font-size: 14px; opacity: 0.7; margin-bottom: 20px; }
+.call-now-btn { display: inline-block; background: var(--white); color: var(--green-dark) !important; font-size: 22px; font-weight: 800; padding: 14px 36px; border-radius: 8px; letter-spacing: -0.5px; transition: all 0.2s; }
+.call-now-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+.call-now-sub { display: block; font-size: 13px; opacity: 0.6; margin-top: 10px; }
+.trust-badges { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); }
+.trust-badge { font-size: 14px; margin-bottom: 10px; opacity: 0.85; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--dark-bg); color: rgba(255,255,255,0.6); padding: 60px 24px 30px; }
+.footer-inner { max-width: var(--max-w); margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.footer h4 { color: var(--white); font-size: 14px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+.footer p, .footer a { font-size: 13px; line-height: 1.8; }
+.footer a:hover { color: var(--white); }
+.footer-brand { font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 12px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; font-size: 12px; text-align: center; }
+.footer-badges { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
+.footer-badge { font-size: 12px; background: rgba(255,255,255,0.06); padding: 6px 12px; border-radius: 4px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-copy h1 { font-size: 40px; }
+  .voyager-intro-inner { grid-template-columns: 1fr; }
+  .advantage-inner { grid-template-columns: 1fr; }
+  .content-section-inner { grid-template-columns: 1fr; }
+  .content-section-inner.reverse { direction: ltr; }
+  .safety-grid { grid-template-columns: repeat(2, 1fr); }
+  .lineup-grid { grid-template-columns: repeat(2, 1fr); }
+  .econ-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .final-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .glk-page { --section-pad: 60px 20px; }
+  .nav-links { display: none; }
+  .hero-copy h1 { font-size: 32px; }
+  .hero-copy .subtitle { font-size: 17px; }
+  .section-title { font-size: 30px; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .safety-grid { grid-template-columns: 1fr; }
+  .lineup-grid { grid-template-columns: 1fr; }
+  .econ-grid { grid-template-columns: 1fr; }
+  .econ-result { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .test-grid { grid-template-columns: 1fr; }
+  .areas-cols { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .final-cta-inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero-badge { display: none; }
+  .contact-form-card { padding: 32px 24px; }
+  .contact-form-card h3 { font-size: 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .stats-row { gap: 20px; }
+  .stat-block .stat-num { font-size: 28px; }
+  .voyager-price .price-amount { font-size: 26px; }
+  .content-copy h2 { font-size: 28px; }
+  .worker-banner h2 { font-size: 26px; }
+  .final-cta > h2 { font-size: 32px; }
+}
+</style>
+
+<div class="glk-page">
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  NOW AVAILABLE IN TEXAS &amp; OKLAHOMA &mdash; GLK Turf Solutions is your certified Kress dealer. <a href="tel:4698613526" style="color:#fff;text-decoration:underline;">Call (469) 861-3526</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><img src="https://framerusercontent.com/images/bKHZK4QIY1fNrF7glhA2hHWk.png?scale-down-to=512" alt="GLK Turf Solutions" style="height:40px;object-fit:contain;"> <span>Certified Kress Commercial Dealer</span></div>
+    <div class="nav-links">
+      <a href="#problem">Why Automate</a>
+      <a href="#voyager">Voyager</a>
+      <a href="#economics">ROI</a>
+      <a href="#lineup">Equipment</a>
+      <a href="#specs">Specs</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="section-label">Kress Commercial Equipment &mdash; Texas &amp; Oklahoma</div>
+      <h1>The Future of Commercial Mowing Is <em>Autonomous</em></h1>
+      <p class="subtitle">GLK Turf Solutions brings the Kress Voyager KR800E to Texas &amp; Oklahoma. Same staff. Twice the lawns. Higher margins.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        <a href="#voyager" class="btn btn-secondary">See the Voyager &rarr;</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2D5016"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Certified Kress Dealer
+        </div>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2D5016"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          TX &amp; OK Coverage
+        </div>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2D5016"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Financing Available
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/Kress%20Voyager%20Robot%20Mower%20with%20Crew.png" alt="Kress Voyager autonomous mower working alongside crew" style="width:100%;border-radius:16px;object-fit:cover;">
+      <div class="hero-badge">
+        <div class="badge-number">7 acres</div>
+        <div class="badge-label">per charge &middot; fully autonomous</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER LOGOS -->
+<div class="logos-bar">
+  <div class="logos-bar-inner">
+    <p>Trusted Equipment Partners</p>
+    <div class="logos-grid">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/kress-logo.png" alt="Kress" style="height:30px;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/imants-logo.png" alt="Imants" style="height:28px;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/trimax-logo.png" alt="Trimax" style="height:30px;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/abiforce-logo.svg" alt="ABI Force" style="height:32px;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/abovepartech-logo.png" alt="Above Par Tech" style="height:34px;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/vredo-logo.png" alt="Vredo" style="height:26px;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/campey-logo.png" alt="Campey Turf Care Systems" style="height:34px;">
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRY PROBLEM -->
+<section class="problem" id="problem">
+  <div class="problem-inner">
+    <div class="section-label">The Industry Problem</div>
+    <h2 class="section-title">Labor costs are crushing margins. Your best crews keep leaving.</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">📈</div>
+        <div>
+          <h4>Rising Labor Costs</h4>
+          <p>Crew wages climb year over year. Loaded labor now consumes 60&ndash;70% of service revenue.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔄</div>
+        <div>
+          <h4>Crew Turnover</h4>
+          <p>Outdoor work is hard. Recruiting and training replacements drains time and profit.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔧</div>
+        <div>
+          <h4>Equipment Downtime</h4>
+          <p>Breakdowns kill productivity. Service calls and repair wait times cost real money.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔇</div>
+        <div>
+          <h4>Noise Complaints</h4>
+          <p>Early mornings and tight neighborhoods. Restrictions on when and where you can work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BANNER -->
+<div class="problem-cta">What if your mower worked while your crew handled everything else?</div>
+
+<!-- VOYAGER INTRODUCTION -->
+<section class="voyager-intro" id="voyager">
+  <div class="voyager-intro-inner">
+    <div style="border-radius:16px;overflow:hidden;background:linear-gradient(135deg, var(--gray-50), var(--green-light));padding:24px;display:flex;align-items:center;justify-content:center;">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/tile_table.png" alt="Kress Voyager KR800E commercial mower" style="width:100%;object-fit:contain;border-radius:8px;">
+    </div>
+    <div>
+      <div class="section-label">The Unmanned Era of Mowing Is Here</div>
+      <h2 class="section-title" style="font-size:36px;">Introducing the Kress Voyager KR800E</h2>
+      <p class="section-subtitle" style="margin-bottom:16px;">The world's first autonomous RTK robotic mower engineered for commercial turf management.</p>
+      <div class="voyager-specs">
+        <div class="spec">🧭 <strong>RTK Navigation</strong></div>
+        <div class="spec">📐 <strong>40" Cutting Deck</strong></div>
+        <div class="spec">🔋 <strong>10 kWh Battery</strong></div>
+        <div class="spec">🏞️ <strong>Up to 7 Acres/Charge</strong></div>
+        <div class="spec">🛡️ <strong>360&deg; Obstacle Detection</strong></div>
+        <div class="spec">⚙️ <strong>5,000-Hour Service Life</strong></div>
+      </div>
+      <div class="voyager-price">
+        <div class="price-amount">$59,999</div>
+        <div class="price-note">Comparable to the annual cost of a mower operator.</div>
+      </div>
+      <div style="margin-top:24px;">
+        <a href="#contact" class="btn btn-primary">Request Voyager Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNFAIR ADVANTAGE -->
+<section class="advantage">
+  <div class="advantage-inner">
+    <div>
+      <div class="section-label">Your Unfair Advantage</div>
+      <h2 class="section-title">Same staff. Twice the lawns. Higher margins.</h2>
+      <p class="advantage-body">Voyager turns one two-person mowing crew into two one-person crews. No operator stuck on a zero-turn. Your best staff now edges, trims, and handles upsells while Voyager handles the heaviest, most repetitive work.</p>
+    </div>
+    <div class="advantage-img">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/fleet-aerial-golf.png" alt="Fleet of mowers at golf course aerial view">
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMICS / COMPARISON -->
+<section class="economics" id="economics">
+  <div class="economics-inner text-center">
+    <div class="section-label">The Numbers</div>
+    <h2 class="section-title">The Math Is Simple</h2>
+
+    <div class="econ-grid" style="text-align:left;">
+      <div class="econ-card">
+        <h3>Traditional Crew Model</h3>
+        <div class="econ-row"><span class="label">Crew size</span><span class="value">2 people</span></div>
+        <div class="econ-row"><span class="label">Hourly rate (loaded)</span><span class="value">$45&ndash;55</span></div>
+        <div class="econ-row"><span class="label">Hours per 40 properties</span><span class="value">40 hrs/week</span></div>
+        <div class="econ-row"><span class="label">Weekly cost</span><span class="value">$1,800&ndash;2,200</span></div>
+        <div class="econ-row"><span class="label">Annual cost</span><span class="value">$93,600&ndash;114,400</span></div>
+      </div>
+      <div class="econ-card voyager-model">
+        <h3>Voyager Model</h3>
+        <div class="econ-row"><span class="label">Equipment cost</span><span class="value">$59,999</span></div>
+        <div class="econ-row"><span class="label">Operator hours</span><span class="value">0</span></div>
+        <div class="econ-row"><span class="label">Annual maintenance</span><span class="value">~$3,000</span></div>
+        <div class="econ-row"><span class="label">Service life</span><span class="value">5,000 hours</span></div>
+        <div class="econ-row"><span class="label">Cost per year (Year 1)</span><span class="value">~$62,999</span></div>
+      </div>
+    </div>
+
+    <div class="econ-result">
+      <div class="result-card">
+        <div class="result-number">20% Lower</div>
+        <div class="result-label">The Result</div>
+        <div class="result-sub">Undercut competitors while maintaining healthy margins</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">+20pt Margin</div>
+        <div class="result-label">The Advantage</div>
+        <div class="result-sub">Plus your crew handles edging, trimming, cleanup, and upsells</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVELS WITH CREW -->
+<section class="content-section">
+  <div class="content-section-inner">
+    <div class="content-img">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/KAC875L%2BKAC877L_lifestyle4.jpg" alt="Kress commercial equipment loaded on work truck" style="height:360px;">
+    </div>
+    <div class="content-copy">
+      <div class="section-label">Logistics</div>
+      <h2>Travels With the Crew</h2>
+      <p>Voyager changes everything &mdash; except logistics. It loads, transports, and deploys just like a manned zero-turn. No special equipment. No new trailers. Fits on your existing rig.</p>
+      <p>Crews move between properties in the same rhythm they always did. The only difference: no one is riding the mower. Set Voyager down, walk the perimeter once, press start, and move to the next job. Your crew handles the rest of the property while Voyager mows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ONE-TIME SMART MAPPING -->
+<section class="content-section alt">
+  <div class="content-section-inner reverse">
+    <div class="content-img">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-sports-facility.jpg" alt="Voyager at sports facility" style="height:360px;">
+    </div>
+    <div class="content-copy">
+      <div class="section-label">Setup</div>
+      <h2>One-Time Smart Mapping</h2>
+      <p>No geo-fencing. No app uploads. No complexity. Simply ride Voyager along the property perimeter one time. The robot learns the boundary, records the map, and saves it permanently to memory.</p>
+      <p>From that moment forward, Voyager mows that property autonomously, every week, without human input. RTK navigation keeps it straight. Cameras and LiDAR keep it safe. One property onboarded in 20 minutes. Your crews spend less time mapping, more time selling and executing additional services.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5,000-HOUR SERVICE LIFE -->
+<section class="content-section">
+  <div class="content-section-inner">
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="section-label">Durability</div>
+      <h2 class="section-title" style="font-size:36px;">5,000-Hour Service Life</h2>
+      <p class="section-subtitle">Engineered for commercial duty cycles with minimal maintenance demands.</p>
+      <div class="stats-row">
+        <div class="stat-block">
+          <div class="stat-num">5,000</div>
+          <div class="stat-unit">Operating Hours</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">5 yr</div>
+          <div class="stat-unit">Warranty Coverage</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">7 ac</div>
+          <div class="stat-unit">Per Charge</div>
+        </div>
+      </div>
+      <p style="font-size:15px;color:var(--gray-500);line-height:1.6;margin-top:8px;"><strong style="color:var(--gray-700);">5-Year / 2,000-Hour Warranty</strong> (Whichever Comes First). Extended maintenance support available through GLK Turf Solutions.</p>
+    </div>
+    <div class="content-img">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/KR172%2BKR173%2BKR174_lifestyle5.jpg" alt="Kress Voyager RTK setup" style="height:360px;">
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY / CERTIFICATIONS -->
+<section class="safety">
+  <div class="safety-inner">
+    <div class="section-label">Safety</div>
+    <h2 class="section-title">Multiple Layers of Protection</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,0.65);max-width:600px;margin:0 auto;">Voyager is built with redundant safety systems designed for zero-operator environments.</p>
+
+    <div class="safety-grid">
+      <div class="safety-card">
+        <div class="s-icon">📡</div>
+        <h3>360&deg; Detection</h3>
+        <p>Cameras, LiDAR, and ultrasonic sensors work redundantly to detect obstacles in every direction, stop the mower, and adjust course in real-time.</p>
+      </div>
+      <div class="safety-card">
+        <div class="s-icon">✅</div>
+        <h3>ETL CUS Certified</h3>
+        <p>Dual safety certification under ETL CUS standard ensures compliance across North American commercial operations.</p>
+      </div>
+      <div class="safety-card">
+        <div class="s-icon">🇪🇺</div>
+        <h3>CE Machinery Directive</h3>
+        <p>Full European machinery safety compliance for global deployments and liability protection.</p>
+      </div>
+      <div class="safety-card">
+        <div class="s-icon">🔒</div>
+        <h3>EN 18031 Cybersecurity</h3>
+        <p>T&Uuml;V S&Uuml;D certified RED cybersecurity. RTK data encryption. No remote takeover vulnerability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BATTERY / CYBERPACK -->
+<section class="content-section">
+  <div class="content-section-inner">
+    <div class="content-img">
+      <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/cyberpack-battery.jpg" alt="Kress CyberPack battery" style="height:360px;">
+    </div>
+    <div class="content-copy">
+      <div class="section-label">Power</div>
+      <h2>Extended Battery Performance</h2>
+      <p>Voyager's built-in 10 kWh battery delivers up to 7 hours of continuous operation in optimal conditions &mdash; enough to handle most properties without interruption.</p>
+      <p>Need more? Extend runtime instantly with any Kress CyberPack battery. Swap a fresh pack, resume mowing. No downtime. No complexity. The entire Kress 60V Commercial lineup shares the same battery ecosystem. Your investment in Voyager unlocks compatibility with every Kress trimmer, blower, edger, and pole saw on the market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KRESS APP INTEGRATION -->
+<section class="content-section alt">
+  <div class="content-section-inner reverse">
+    <div style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--green-light), #D4E8D0);border-radius:16px;padding:48px;min-height:320px;">
+      <div style="text-align:center;">
+        <div style="font-size:72px;margin-bottom:16px;">📱</div>
+        <div style="font-size:18px;font-weight:700;color:var(--green-dark);">Kress Commercial App</div>
+        <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Real-time fleet management</div>
+      </div>
+    </div>
+    <div class="content-copy">
+      <div class="section-label">Connected</div>
+      <h2>Kress Commercial App Integration</h2>
+      <p>Voyager is connected to the Kress Commercial app for real-time tracking, remote diagnostics, and over-the-air updates. Monitor fleet health, track mowing completion, and receive alerts &mdash; all from your phone.</p>
+      <p>No complex software. No admin overhead. Simple insights. Better decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKER PROTECTION BANNER -->
+<section class="worker-banner">
+  <div class="worker-banner-inner">
+    <h2>Equipment That Protects Workers &mdash; and Keeps Them Longer</h2>
+    <p>Reduced noise, vibration, and exhaust exposure make daily work less punishing. Crews stay longer. Turnover drops. Reputation grows. Voyager isn't just smarter &mdash; it's more human.</p>
+  </div>
+</section>
+
+<!-- COMPLETE EQUIPMENT LINEUP -->
+<section class="lineup" id="lineup">
+  <div class="lineup-inner text-center">
+    <div class="section-label">Full Equipment Lineup</div>
+    <h2 class="section-title">Complete Commercial Electric Lineup</h2>
+    <p class="section-subtitle" style="max-width:650px;margin:0 auto;">Every tool your crew needs. One battery platform. Zero emissions.</p>
+
+    <div class="lineup-grid" style="text-align:left;">
+      <div class="lineup-card">
+        <div class="lineup-card-img"><img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/KC150_lifestyle2.jpg" alt="Kress string trimmer"></div>
+        <div class="lineup-card-body">
+          <h3>String Trimmer</h3>
+          <p>Lightweight, quiet, zero-emissions edging and trimming. Reduces crew fatigue.</p>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img"><img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/%2B_DSC2577.jpg" alt="Kress edger"></div>
+        <div class="lineup-card-body">
+          <h3>Edger</h3>
+          <p>Precision pavement edges and hardscape boundaries. Clean, professional results every time.</p>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img"><img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/blower-action.jpg" alt="Kress commercial blower"></div>
+        <div class="lineup-card-body">
+          <h3>Commercial Blower</h3>
+          <p>Versatile cleanup tool. Leaves, debris, or post-cut tidying. Fast and efficient.</p>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img"><img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/_DSC2820.jpg" alt="Kress pole saw"></div>
+        <div class="lineup-card-body">
+          <h3>Pole Saw</h3>
+          <p>Overhead pruning and branch removal without ladder work. Safer for crews.</p>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img"><img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/KC710.9_lifestyle2.jpg" alt="Kress walk-behind commercial mower"></div>
+        <div class="lineup-card-body">
+          <h3>Walk-Behind Mower</h3>
+          <p>High-performance, zero-emission alternative for tight spaces and complex landscapes.</p>
+        </div>
+      </div>
+      <div class="lineup-card">
+        <div class="lineup-card-img"><img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/KAC875L%2BKAC877L_lifestyle2.jpg" alt="Kress CyberTank power station"></div>
+        <div class="lineup-card-body">
+          <h3>CyberTank Power Station</h3>
+          <p>Multi-battery charging hub. One power source for your entire crew's tools.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTION GALLERY -->
+<section class="action-gallery">
+  <div class="action-gallery-inner">
+    <div class="section-label">In the Field</div>
+    <h2 class="section-title">See the Full Kress Commercial System in Action</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/%2B_DSC2449.jpg" alt="Two crew members working on residential property">
+        <div class="gallery-label">Crew coordination</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/_DSC2772.jpg" alt="Crew member using edger on walkway">
+        <div class="gallery-label">Precision edging</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.caseys.shop/glk-kress-commercial-mowing/kress-images/voyager-assets/%2B_DSC2535.jpg" alt="Crew member string trimming along hedge">
+        <div class="gallery-label">Line trimming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIFICATIONS TABLE -->
+<section class="specs" id="specs">
+  <div class="specs-inner text-center">
+    <div class="section-label">Technical Details</div>
+    <h2 class="section-title">Voyager KR800E Specifications</h2>
+
+    <table class="specs-table" style="text-align:left;">
+      <thead>
+        <tr>
+          <th>Specification</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="spec-label">Navigation System</td><td class="spec-value">RTK (Real-Time Kinematic) GNSS</td></tr>
+        <tr><td class="spec-label">Deck Width</td><td class="spec-value">40 inches</td></tr>
+        <tr><td class="spec-label">Cutting Height Range</td><td class="spec-value">1.5" to 5.0"</td></tr>
+        <tr><td class="spec-label">Battery System</td><td class="spec-value">10 kWh / 45V CyberPack Compatible</td></tr>
+        <tr><td class="spec-label">Max Speed</td><td class="spec-value">5.6 mph</td></tr>
+        <tr><td class="spec-label">Coverage Area</td><td class="spec-value">Up to 7 acres per charge</td></tr>
+        <tr><td class="spec-label">Charging Time</td><td class="spec-value">~9 hours (standard charger)</td></tr>
+        <tr><td class="spec-label">Max Incline</td><td class="spec-value">22&deg; / 40% slope</td></tr>
+        <tr><td class="spec-label">Obstacle Detection</td><td class="spec-value">360&deg; Camera + Ultrasonic + LiDAR</td></tr>
+        <tr><td class="spec-label">Service Life</td><td class="spec-value">5,000 hours</td></tr>
+        <tr><td class="spec-label">Warranty</td><td class="spec-value">5 years or 2,000 hours (whichever first)</td></tr>
+        <tr class="highlight-row"><td class="spec-label">Price (USD)</td><td class="spec-value">$59,999.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- HOW TO GET STARTED -->
+<section class="steps">
+  <div class="steps-inner">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">How to Get Started with GLK</h2>
+    <p class="section-subtitle" style="max-width:600px;margin:0 auto;">A simple 6-step process to transform your operation.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Contact GLK</h3>
+        <p>Request a quote or schedule a Voyager demo. Our team will discuss your properties and operations.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Site Assessment</h3>
+        <p>GLK evaluates your properties for Voyager compatibility. We identify optimal deployment zones.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Equipment Selection</h3>
+        <p>Customize your Voyager and 60V tool lineup based on your workflow and crew capacity.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Financing Options</h3>
+        <p>Pay in full or finance through Kress. Multiple terms available to match your cash flow.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <h3>Delivery &amp; Onboarding</h3>
+        <p>GLK handles setup, property mapping, crew training, and initial field operations support.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">6</div>
+        <h3>Go to Work</h3>
+        <p>Voyager becomes part of your daily operation. Monitor via the Kress app. Scale when ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas">
+  <div class="areas-inner">
+    <div class="section-label">Coverage</div>
+    <h2 class="section-title">Service Areas</h2>
+    <p class="section-subtitle" style="margin:8px auto 0;">GLK Turf Solutions proudly serves Texas and Oklahoma with certified Kress equipment and expert support.</p>
+
+    <div class="areas-cols">
+      <div class="area-block">
+        <h3>Texas Coverage</h3>
+        <div class="area-sub">DFW Metro</div>
+        <div class="city-grid">
+          <span>Dallas</span>
+          <span>Fort Worth</span>
+          <span>Arlington</span>
+          <span>Plano</span>
+          <span>Irving</span>
+        </div>
+        <div class="area-sub">Houston Area</div>
+        <div class="city-grid">
+          <span>Houston</span>
+          <span>The Woodlands</span>
+          <span>Sugar Land</span>
+        </div>
+        <div class="area-sub">Austin Region</div>
+        <div class="city-grid">
+          <span>Austin</span>
+          <span>Lakeway</span>
+          <span>Cedar Park</span>
+        </div>
+        <div class="area-sub">San Antonio Area</div>
+        <div class="city-grid">
+          <span>San Antonio</span>
+          <span>New Braunfels</span>
+        </div>
+        <div class="area-sub">Additional</div>
+        <div class="city-grid">
+          <span>Tyler</span>
+          <span>Waco</span>
+          <span>Lubbock</span>
+        </div>
+      </div>
+      <div class="area-block">
+        <h3>Oklahoma Coverage</h3>
+        <div class="area-sub">OKC Metro</div>
+        <div class="city-grid">
+          <span>Oklahoma City</span>
+          <span>Edmond</span>
+          <span>Norman</span>
+          <span>Midwest City</span>
+        </div>
+        <div class="area-sub">Tulsa Area</div>
+        <div class="city-grid">
+          <span>Tulsa</span>
+          <span>Broken Arrow</span>
+          <span>Jenks</span>
+        </div>
+        <div class="area-sub">Additional</div>
+        <div class="city-grid">
+          <span>Lawton</span>
+          <span>Stillwater</span>
+        </div>
+      </div>
+    </div>
+    <p class="areas-note">Additional regions and properties available by special request. <a href="#contact" style="color:var(--green-dark);font-weight:600;">Contact GLK for service expansion inquiries &rarr;</a></p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner text-center">
+    <div class="section-label">What Operators Are Saying</div>
+    <h2 class="section-title">Results From the Field</h2>
+
+    <div class="test-grid" style="text-align:left;">
+      <div class="test-card">
+        <div class="quote">"Voyager freed up my crew to handle the jobs we actually make money on. First month, we added three new service lines. Game changer."</div>
+        <div class="author">Marcus T.</div>
+        <div class="role">Landscape Manager &mdash; DFW Metro</div>
+      </div>
+      <div class="test-card">
+        <div class="quote">"Our crew's mood improved immediately. No one was stuck on the mower all day. Equipment is reliable, support from GLK is excellent. This is the future."</div>
+        <div class="author">Sarah J.</div>
+        <div class="role">Operations Director &mdash; Austin-area Lawn Care</div>
+      </div>
+      <div class="test-card">
+        <div class="quote">"We paid for Voyager in less than one season. Margin improvement was exactly what GLK promised. Already planning our second unit."</div>
+        <div class="author">David R.</div>
+        <div class="role">Owner &mdash; Oklahoma City</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA / CONTACT FORM -->
+<section class="final-cta" id="contact">
+  <h2>Ready to Own the Market?</h2>
+  <p class="sub">Contact GLK Turf Solutions for a Kress Voyager demo and equipment consultation.</p>
+
+  <div class="final-cta-inner">
+    <!-- Left: Quote Form -->
+    <div class="contact-form-card" id="form-card">
+      <h3>Get Your Custom Kress Equipment Quote</h3>
+      <p class="form-subtext">See how autonomous mowing transforms your operation. Most quotes delivered within 2 hours.</p>
+
+      <form id="kress-quote-form">
+        <div class="form-group">
+          <label for="name" class="required">Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="company" class="required">Company / Organization</label>
+          <input type="text" id="company" name="company" required placeholder="Smith Landscaping Inc.">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone" class="required">Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label for="email" class="required">Email</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fleet">Fleet / Crew Size <span style="font-weight:400;color:#8b949e;">(optional)</span></label>
+          <input type="text" id="fleet" name="fleet" placeholder="e.g., 3 crews, 5 mowers">
+        </div>
+        <input type="hidden" id="source" name="source" value="v2">
+        <button type="submit" class="form-submit" id="submit-btn">Get Your Kress Quote</button>
+        <div id="form-error" style="display:none;margin-top:12px;padding:12px;background:#FEE2E2;color:#991B1B;border-radius:6px;font-size:14px;text-align:center;">Something went wrong. Please call us at <a href="tel:4698613526" style="color:#991B1B;font-weight:700;">(469) 861-3526</a> instead.</div>
+      </form>
+
+      <!-- Thank You State -->
+      <div id="form-success" style="display:none;text-align:center;padding:40px 20px;">
+        <div style="font-size:48px;margin-bottom:16px;">&#10003;</div>
+        <h3 style="font-size:24px;font-weight:800;color:#2D5016;margin-bottom:12px;">Thank You!</h3>
+        <p style="font-size:16px;color:#374151;line-height:1.6;margin-bottom:8px;">We've received your request and a Kress equipment specialist will contact you <strong>within 2 hours</strong>.</p>
+        <p style="font-size:14px;color:#6B7280;">Need to reach us sooner? Call <a href="tel:4698613526" style="color:#2D5016;font-weight:600;">(469) 861-3526</a></p>
+      </div>
+    </div>
+
+    <!-- Right: Call Now + Contact -->
+    <div class="contact-info-block">
+      <div class="call-now-card">
+        <div class="call-now-icon">&#128222;</div>
+        <h3>Prefer to Talk Now?</h3>
+        <p>Speak directly with a Kress equipment specialist.</p>
+        <a href="tel:4698613526" class="call-now-btn">(469) 861-3526</a>
+        <span class="call-now-sub">Jeff Kadlec, Sales Manager</span>
+      </div>
+      <div class="contact-info-item">
+        <p><a href="mailto:office@glkturfsolutions.com">office@glkturfsolutions.com</a></p>
+      </div>
+      <div class="contact-info-item">
+        <p>508 E Cook St &middot; Royce City, TX 75189</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge">&#10003; No obligation &mdash; just answers</div>
+        <div class="trust-badge">&#10003; 2-hour response guaranteed</div>
+        <div class="trust-badge">&#10003; Financing options available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">GLK Turf Solutions</div>
+        <p>Balancing Innovation &amp; Sound Agronomics since 2014. Owned and operated by turfgrass professionals with 40+ years combined experience.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">Certified Kress Dealer</span>
+          <span class="footer-badge">Sourcewell Contract</span>
+        </div>
+      </div>
+      <div>
+        <h4>Equipment</h4>
+        <p><a href="#voyager">Kress Voyager</a></p>
+        <p><a href="#lineup">60V Commercial Tools</a></p>
+        <p><a href="#specs">Specifications</a></p>
+        <p><a href="#contact">Get a Quote</a></p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p><a href="https://glkturfsolutions.com/aboutus">About GLK</a></p>
+        <p><a href="#economics">ROI Calculator</a></p>
+        <p><a href="#contact">Contact Us</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>508 E Cook St<br>Royce City, TX 75189</p>
+        <p><a href="tel:4698613526">(469) 861-3526</a></p>
+        <p><a href="mailto:office@glkturfsolutions.com">office@glkturfsolutions.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 GLK Turf Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- SMOOTH SCROLL + FORM JS -->
+<script>
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ===== FORM SUBMISSION — Google Apps Script =====
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4sDVPikw0_v7MwJIZplE8ZeNtDaioe1OsYaW8TrJqzqlFtvLh1FCVxMMB6_pf7QN7xA/exec';
+
+document.getElementById('kress-quote-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var btn = document.getElementById('submit-btn');
+  var errorDiv = document.getElementById('form-error');
+  var originalText = btn.textContent;
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  btn.style.opacity = '0.7';
+  errorDiv.style.display = 'none';
+
+  var formData = {
+    name: document.getElementById('name').value,
+    company: document.getElementById('company').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    fleet: document.getElementById('fleet').value,
+    source: document.getElementById('source').value
+  };
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(formData)
+  })
+  .then(function() {
+    document.getElementById('kress-quote-form').style.display = 'none';
+    document.querySelector('#form-card h3').style.display = 'none';
+    document.querySelector('#form-card .form-subtext').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = originalText;
+    btn.style.opacity = '1';
+    errorDiv.style.display = 'block';
+  });
+});
+</script>
+
+</div><!-- end .glk-page -->
