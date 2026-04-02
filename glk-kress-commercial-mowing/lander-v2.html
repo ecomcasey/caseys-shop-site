@@ -1,3 +1,25 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17696177140"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17696177140');
+
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-17696177140/x87sCPSvzt4bEPT3mPZB',
+    'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 /* ===== RESET & BASE ===== */
@@ -1041,6 +1063,11 @@ document.getElementById('kress-quote-form').addEventListener('submit', function(
     body: JSON.stringify(formData)
   })
   .then(function() {
+    // Fire Google Ads conversion
+    if (typeof gtag_report_conversion === 'function') {
+      gtag_report_conversion();
+    }
+    // Success — hide form, show thank you
     document.getElementById('kress-quote-form').style.display = 'none';
     document.querySelector('#form-card h3').style.display = 'none';
     document.querySelector('#form-card .form-subtext').style.display = 'none';
